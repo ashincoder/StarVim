@@ -1,4 +1,4 @@
-** Things to workon
+** Things to work on
 
 + [ ] Logo
 + [ ] Making a colorscheme
