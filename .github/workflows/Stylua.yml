@@ -1,7 +1,7 @@
 name: stylua
 on:
   push:
-    branches: ["master"]
+    branches: ["dev"]
     paths-ignore:
       - ".github/**"
       - "*.org"
