@@ -6,36 +6,36 @@ cmd "filetype plugin on"
 opt.ruler = false
 opt.hidden = true
 opt.fileencoding = "utf-8" -- the encoding written to a file
-opt.hlsearch = Kv.hl_search
-opt.ignorecase = Kv.ignorecase
+opt.hlsearch = Sv.hl_search
+opt.ignorecase = Sv.ignorecase
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true -- set term gui colors (most terminals support this)
 opt.cul = true
 opt.mouse = "a" -- enable mouse in neovim
 opt.signcolumn = "yes"
-opt.cmdheight = Kv.cmdheight
+opt.cmdheight = Sv.cmdheight
 opt.updatetime = 250 -- update interval for gitsigns
-opt.timeoutlen = Kv.timeoutlen -- set time out intervel
+opt.timeoutlen = Sv.timeoutlen -- set time out intervel
 opt.clipboard = "unnamedplus"
-opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-opt.pumheight = Kv.pumheight -- pop up menu height
+opt.guifont = "Sv." -- the font used in graphical neovim applications
+opt.pumheight = Sv.pumheight -- pop up menu height
 opt.undodir = CACHE_PATH .. "/undo" -- set an undo directory
-opt.undofile = Kv.undofile -- enable persisten undo
-opt.swapfile = Kv.swapfile -- creates a swapfile
-opt.spell = Kv.spell
-opt.spelllang = Kv.spelllang
+opt.undofile = Sv.undofile -- enable persisten undo
+opt.swapfile = Sv.swapfile -- creates a swapfile
+opt.spell = Sv.spell
+opt.spelllang = Sv.spelllang
 
 -- Numbers
-opt.number = Kv.number
-opt.numberwidth = Kv.number_width
-opt.relativenumber = Kv.relativenumber
+opt.number = Sv.number
+opt.numberwidth = Sv.number_width
+opt.relativenumber = Sv.relativenumber
 
 -- for indenline
-opt.expandtab = Kv.expandtab
-opt.shiftwidth = Kv.shiftwidth
-opt.smartindent = Kv.smartindent
-opt.tabstop = Kv.tab_stop -- insert 4 spaces for a tab
+opt.expandtab = Sv.expandtab
+opt.shiftwidth = Sv.shiftwidth
+opt.smartindent = Sv.smartindent
+opt.tabstop = Sv.tab_stop -- insert 4 spaces for a tab
 
 -- disable builtin vim plugins
 vim.g.loaded_gzip = 0

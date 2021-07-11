@@ -1,4 +1,4 @@
-vim.g.mapleader = Kv.leader_key
+vim.g.mapleader = Sv.leader_key
 
 -- Comments
 vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>",
@@ -173,7 +173,7 @@ M.config = function()
 
     for i = 0, 10 do mappings[tostring(i)] = "which_key_ignore" end
 
-    for k, v in pairs(Kv.user_which_key) do mappings[k] = v end
+    for k, v in pairs(Sv.user_which_key) do mappings[k] = v end
 
     local wk = require("which-key")
 

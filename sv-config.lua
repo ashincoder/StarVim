@@ -1,27 +1,27 @@
 -- This is a example config.
--- 'Kv' is the global options object
+-- 'Sv' is the global options object
 -- General Settings
-Kv.number = true
-Kv.relative_number = false
+Sv.number = true
+Sv.relative_number = false
 
-Kv.pumheight = 20
-Kv.timeoutlen = 100
+Sv.pumheight = 20
+Sv.timeoutlen = 100
 
-Kv.shell = "zsh"
+Sv.shell = "zsh"
 
-Kv.undofile = true
+Sv.undofile = true
 
-Kv.leader_key = ' '
-Kv.colorscheme = 'tokyonight'
+Sv.leader_key = ' '
+Sv.colorscheme = 'tokyonight'
 
 -- TreeSitter parsers config
-Kv.treesitter.ensure_installed = "all"
-Kv.treesitter.ignore_install = {"haskell"}
-Kv.treesitter.highlight.enabled = true
+Sv.treesitter.ensure_installed = "all"
+Sv.treesitter.ignore_install = {"haskell"}
+Sv.treesitter.highlight.enabled = true
 
 
 -- Additional Plugins
--- Kv.user_plugins = {
+-- Sv.user_plugins = {
 --     {"folke/tokyonight.nvim"},
 --     {
 --         "ray-x/lsp_signature.nvim",
@@ -31,7 +31,7 @@ Kv.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Leader bindings for WhichKey
--- Kv.user_which_key = {
+-- Sv.user_which_key = {
 
 --   A = {
 --     name = "+Custom Leader Keys",

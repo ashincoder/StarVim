@@ -4,7 +4,7 @@ CACHE_PATH = vim.fn.stdpath "cache"
 TERMINAL = vim.fn.expand "$TERMINAL"
 USER = vim.fn.expand "$USER"
 
-Kv = {
+Sv = {
     number = true,
     relativenumber = false,
     number_width = 4,

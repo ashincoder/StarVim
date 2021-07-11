@@ -26,5 +26,5 @@ g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 
 -- g.onedark_style = 'deep'
 
-g.colors_name = Kv.colorscheme
+g.colors_name = Sv.colorscheme
 

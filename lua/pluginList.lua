@@ -152,7 +152,7 @@ return packer.startup(function(use)
     use {
         "Pocco81/AutoSave.nvim",
         config = function() require("plugins.zenmode").autoSave() end,
-        cond = function() return vim.g.auto_save == Kv.autosave end
+        cond = function() return vim.g.auto_save == Sv.autosave end
     }
 
     -- smooth scroll
@@ -182,5 +182,5 @@ return packer.startup(function(use)
     --     }
     -- }
 
-    for _, plugin in pairs(Kv.user_plugins) do packer.use(plugin) end
+    for _, plugin in pairs(Sv.user_plugins) do packer.use(plugin) end
 end)

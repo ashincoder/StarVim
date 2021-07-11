@@ -1,6 +1,6 @@
 -- Load config
 require "config"
-vim.cmd("luafile " .. CONFIG_PATH .. "/kv-config.lua")
+vim.cmd("luafile " .. CONFIG_PATH .. "/sv-config.lua")
 
 -- Colorscheme
 require "colors"

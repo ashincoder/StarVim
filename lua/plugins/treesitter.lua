@@ -4,9 +4,9 @@ M.config = function()
     local ts_config = require("nvim-treesitter.configs")
 
     ts_config.setup {
-        ensure_installed = Kv.treesitter.ensure_installed,
-        ignore_installed = Kv.treesitter.ignore_install,
-        highlight = Kv.treesitter.highlight,
+        ensure_installed = Sv.treesitter.ensure_installed,
+        ignore_installed = Sv.treesitter.ignore_install,
+        highlight = Sv.treesitter.highlight,
         indent = {
           enable = true
         }
