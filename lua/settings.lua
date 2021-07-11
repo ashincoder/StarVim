@@ -37,17 +37,36 @@ opt.shiftwidth = Sv.shiftwidth
 opt.smartindent = Sv.smartindent
 opt.tabstop = Sv.tab_stop -- insert 4 spaces for a tab
 
--- disable builtin vim plugins
-vim.g.loaded_gzip = 0
-vim.g.loaded_tar = 0
-vim.g.loaded_tarPlugin = 0
-vim.g.loaded_zipPlugin = 0
-vim.g.loaded_2html_plugin = 0
-vim.g.loaded_netrw = 0
-vim.g.loaded_netrwPlugin = 0
-vim.g.loaded_matchit = 0
-vim.g.loaded_matchparen = 0
-vim.g.loaded_spec = 0
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin", -- 'man',
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "spellfile_plugin",
+  -- 'matchit', 'matchparen', 'shada_plugin',
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+  vim.g["loaded_" .. plugin] = 1
+end
+
+if Sv.leader_key == " " or Sv.leader_key == "space" then
+  vim.g.mapleader = ' '
+else
+  vim.g.mapleader = Sv.leader_key
+end
 
 local M = {}
 
