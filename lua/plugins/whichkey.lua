@@ -1,5 +1,3 @@
-vim.g.mapleader = Sv.leader_key
-
 -- Comments
 vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>",
                         {noremap = true, silent = true})
@@ -160,6 +158,12 @@ M.config = function()
             name = "+errors",
             l = {"<cmd>lopen<cr>", "Open Location List"},
             q = {"<cmd>copen<cr>", "Open Quickfix List"}
+        },
+        t = {
+            name = "+Terminal",
+            t = {"<cmd>tabnew | terminal<cr>", "New Tab Terminal"},
+            v = {"<cmd>vnew term://bash <cr>", "Vert Split Terminal"},
+            s = {"<cmd>split term://bash | resize 10 <cr>", "Vert Split Terminal"}
         },
         z = {
             name = "+Zen",
