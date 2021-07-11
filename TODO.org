@@ -1,5 +1,0 @@
-** Things to work on
-
-+ [ ] Logo
-+ [ ] Making a colorscheme
-+ [ ] Improving code quality

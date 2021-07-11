@@ -1,0 +1,14 @@
+#+TITLE:StarVim ⭐
+The star of your workflow 🎉
+
+** Installation
+   This only requires one command
+  #+begin_src
+  bash <(curl -s https://raw.githubusercontent.com/ashincoder/StarVim/dev/bin/installer)
+  #+end_src
+
+** Things to work on
+
++ [ ] Logo
++ [ ] Making a colorscheme
++ [ ] Improving code quality
