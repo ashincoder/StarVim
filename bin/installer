@@ -50,7 +50,7 @@ installnodegentoo() {
 installnode() {
     echo "Installing node..."
     [ "$(uname)" == "Darwin" ] && installnodemac
-    [ "$(uname -n)" == "voidlinux" ] && installnodevoid
+    [ -n "$(cat /etc/os-release | grep void)" ] && installnodevoid
     [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && installnodeubuntu
     [ -f "/etc/arch-release" ] && installnodearch
     [ -f "/etc/artix-release" ] && installnodearch
@@ -89,7 +89,7 @@ installpipongentoo() {
 installpip() {
     echo "Installing pip..."
     [ "$(uname)" == "Darwin" ] && installpiponmac
-    [ "$(uname -n)" == "voidlinux" ] && installpiponvoid
+    [ -n "$(cat /etc/os-release | grep void)" ] && installpiponvoid
     [ -n "$(cat /etc/os-release | grep Ubuntu)" ] && installpiponubuntu
     [ -f "/etc/arch-release" ] && installpiponarch
     [ -f "/etc/fedora-release" ] && installpiponfedora
