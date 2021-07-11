@@ -40,6 +40,9 @@ Sv = {
 
     user_which_key = {},
     user_plugins = {
-        -- use kv-config.lua for this not put here
+        -- Put plugins in sv-config.lua
+    },
+    user_autocommands = {
+        {"FileType", "qf", "set nobuflisted"}
     }
 }

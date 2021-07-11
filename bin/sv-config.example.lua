@@ -40,3 +40,6 @@ Sv.treesitter.highlight.enabled = true
 --   },
 
 -- }
+
+-- Additional Autocommands
+-- Sv.user_autocommands = { }
