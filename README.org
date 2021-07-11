@@ -20,3 +20,5 @@ Contributions are welcomed since I am willing to make it community developed. So
 + [ ] Logo
 + [ ] Making a colorscheme
 + [ ] Improving code quality
+
+> This is an unfinished work !
