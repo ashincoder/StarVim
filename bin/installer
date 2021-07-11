@@ -12,6 +12,7 @@ installnodemac() {
 installnodeubuntu() {
     sudo apt install nodejs
     sudo apt install npm
+    npm install -g tree-sitter-cli
 }
 
 moveoldnvim() {
@@ -22,11 +23,13 @@ moveoldnvim() {
 installnodearch() {
     sudo pacman -S nodejs
     sudo pacman -S npm
+    sudo pacman -S tree-sitter 
 }
 
 installnodevoid() {
     sudo xbps-install -y nodejs
     sudo xbps-install -y yarn
+    sudo xbps-install -y tree-sitter
 }
 
 installnodefedora() {
