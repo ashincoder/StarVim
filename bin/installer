@@ -146,19 +146,16 @@ installonubuntu() {
     sudo apt install ripgrep fzf
     sudo apt install libjpeg8-dev zlib1g-dev python-dev python3-dev libxtst-dev
     pip3 install neovim-remote
-    npm install -g tree-sitter-cli
 }
 
 installonvoid() {
     sudo xbps-install -S ripgrep fzf 
     pip3 install neovim-remote
-    npm install -g tree-sitter-cli
 }
 
 installonarch() {
     sudo pacman -S ripgrep fzf 
     pip3 install neovim-remote
-    npm install -g tree-sitter-cli
 }
 
 installonfedora() {
@@ -169,7 +166,6 @@ installonfedora() {
 
 installongentoo() {
     sudo emerge -avn sys-apps/ripgrep app-shells/fzf  dev-python/neovim-remote virtual/jpeg sys-libs/zlib
-    npm install -g tree-sitter-cli
 }
 
 installextrapackages() {
