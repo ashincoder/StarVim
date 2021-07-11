@@ -1,3 +1,3 @@
 
 ## Installation
-`bash <(curl -s https://raw.githubusercontent.com/ashincoder/StarVim/dev/bin/installer)`
+`bash <(curl -s https://raw.githubusercontent.com/ashincoder/StarVim/main/bin/installer)`
