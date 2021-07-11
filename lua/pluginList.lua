@@ -14,11 +14,16 @@ packer.init {
 return packer.startup(function(use)
     use "wbthomason/packer.nvim"
 
-    use "akinsho/nvim-bufferline.lua"
+    use {
+        "akinsho/nvim-bufferline.lua",
+        config = function() require("plugins.bufferline").config() end,
+        event = "BufWinEnter"
+    }
 
     use {
         "hoob3rt/lualine.nvim",
-        config = function() require("plugins.lualine").config() end
+        config = function() require("plugins.lualine").config() end,
+        event = "BufWinEnter"
     }
 
     -- color related stuff
@@ -76,7 +81,8 @@ return packer.startup(function(use)
                 config = function()
                     require("plugins.compe").snippets()
                 end
-            }, "rafamadriz/friendly-snippets"
+            }, "rafamadriz/friendly-snippets",
+               event = "InsertCharPre"
         }
     }
 
@@ -100,7 +106,6 @@ return packer.startup(function(use)
             {"nvim-lua/popup.nvim", module = "popup"},
             {"nvim-lua/plenary.nvim", module = "plenary"},
             {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
-            {"nvim-telescope/telescope-media-files.nvim"}
         },
         cmd = "Telescope",
         config = function() require("plugins.telescope").config() end
@@ -176,11 +181,6 @@ return packer.startup(function(use)
         setup = function() require("utils").blankline() end
     }
 
-    --  {
-    --     display = {
-    --         border = {"┌", "─", "┐", "│", "┘", "─", "└", "│"}
-    --     }
-    -- }
-
     for _, plugin in pairs(Sv.user_plugins) do packer.use(plugin) end
-end)
+end
+)

@@ -112,8 +112,9 @@ installpacker() {
 }
 
 cloneconfig() {
-    echo "Cloning KeyVim configuration"
-    git clone --branch main https://github.com/ashincoder/KeyVim.git ~/.config/nvim
+    echo "Cloning StarVim configuration"
+    git clone --branch main https://github.com/ashincoder/StarVim.git ~/.config/nvim
+    cp $HOME/.config/nvim/bin/sv-config.example.lua $HOME/.config/nvim/sv-config.lua
     nvim --headless \
         +'autocmd User PackerComplete sleep 100m | qall' \
         +PackerInstall
@@ -182,7 +183,7 @@ installextrapackages() {
 }
 
 # Welcome
-echo 'Installing KeyVim'
+echo 'Installing StarVim'
 
 # move old nvim directory if it exists
 [ -d "$HOME/.config/nvim" ] && moveoldnvim
@@ -203,7 +204,7 @@ else
 fi
 
 if [ -e "$HOME/.config/nvim/init.lua" ]; then
-    echo 'KeyVim already installed'
+    echo 'StarVim already installed'
 else
     # clone config down
     cloneconfig

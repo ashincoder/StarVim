@@ -15,8 +15,8 @@ Sv.leader_key = ' '
 Sv.colorscheme = 'tokyonight'
 
 -- TreeSitter parsers config
-Sv.treesitter.ensure_installed = "all"
-Sv.treesitter.ignore_install = {"haskell"}
+-- Sv.treesitter.ensure_installed = "all"
+-- Sv.treesitter.ignore_install = {"haskell"}
 Sv.treesitter.highlight.enabled = true
 
 

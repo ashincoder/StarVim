@@ -4,21 +4,21 @@ M.config = function()
 
     local g = vim.g
     local fn = vim.fn
-    local plugins_count = fn.len(fn.globpath(
-                                     '~/.local/share/nvim/site/pack/packer/start',
-                                     '*', 0, 1))
+    local plugins_count = fn.len(fn.globpath('~/.local/share/nvim/site/pack/packer/start', '*', 0, 1))
 
     g.dashboard_disable_statusline = 1
     g.dashboard_default_executive = "telescope"
     g.dashboard_custom_header = {
 
-        "███████╗████████╗ █████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-        "██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██║   ██║██║████╗ ████║ ",
-        "███████╗   ██║   ███████║██████╔╝██║   ██║██║██╔████╔██║ ",
-        "╚════██║   ██║   ██╔══██║██╔══██╗╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-        "███████║   ██║   ██║  ██║██║  ██║ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-        "╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝ "
-
+        "   ▄████████    ▄████████    ▄█    █▄     ▄█    █▄   ▄█    ▄▄▄▄███▄▄▄▄   ",
+        "  ███    ███   ███    ███   ███    ███   ███    ███ ███  ▄██▀▀▀███▀▀▀██▄ ",
+        "  ███    ███   ███    █▀    ███    ███   ███    ███ ███▌ ███   ███   ███ ",
+        "  ███    ███   ███         ▄███▄▄▄▄███▄▄ ███    ███ ███▌ ███   ███   ███ ",
+        "▀███████████ ▀███████████ ▀▀███▀▀▀▀███▀  ███    ███ ███▌ ███   ███   ███ ",
+        "  ███    ███          ███   ███    ███   ███    ███ ███  ███   ███   ███ ",
+        "  ███    ███    ▄█    ███   ███    ███   ███    ███ ███  ███   ███   ███ ",
+        "  ███    █▀   ▄████████▀    ███    █▀     ▀██████▀  █▀    ▀█   ███   █▀  ",
+        "                                                                         "
     }
 
     g.dashboard_custom_section = {
@@ -49,7 +49,7 @@ M.config = function()
     }
 
     g.dashboard_custom_footer = {
-        "StarVim Loaded " .. plugins_count .. ' plugins'
+      "AshVim Loaded " .. plugins_count .. ' plugins',
 
     }
 
