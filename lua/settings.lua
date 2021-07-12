@@ -55,11 +55,13 @@ local disabled_built_ins = {
 	"logipat",
 	"rrhelper",
 	"spellfile_plugin",
-	-- 'matchit', 'matchparen', 'shada_plugin',
+	"matchit",
+	-- "matchparen",
+	-- "shada_plugin",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-	vim.g["loaded_" .. plugin] = 1
+	vim.g["loaded_" .. plugin] = 0
 end
 
 if Sv.leader_key == " " or Sv.leader_key == "space" then
