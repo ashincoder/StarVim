@@ -4,7 +4,7 @@ M.config = function()
 	require("lualine").setup({
 		options = {
 			-- ... your lualine config
-			theme = vim.g.colors_name,
+			theme = Sv.colorscheme,
 			-- ... your lualine config
 		},
 		sections = {
