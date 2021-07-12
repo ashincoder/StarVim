@@ -63,6 +63,12 @@ nvim +PackerCompile
 
 - And the Killer Feature ! [![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)]()
 
+## Credits
+
+The following repositories helped me in improving StarVim
+-  ChristianChiarulli's [LunarVim](https://github.com/ChristianChiarulli/LunarVim) 
+-  Siduck's [NvChad](https://github.com/siduck76/NvChad) 
+
 ## TODO
 
 This project is still a work in progress. But there won't be any breakage.
