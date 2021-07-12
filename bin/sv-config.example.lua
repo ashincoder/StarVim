@@ -35,7 +35,7 @@ Sv.lang.python.analysis.use_library_code_types = true
 
 -- go
 -- to change default formatter from gofmt to goimports
--- Sv.lang.formatter.go.exe = "goimports"
+-- Sv.lang.go.formatter.exe = "goimports"
 
 -- javascript
 Sv.lang.tsserver.linter = nil
