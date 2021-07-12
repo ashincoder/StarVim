@@ -1,10 +1,12 @@
 local function map(mode, lhs, rhs, opts)
-    local options = {noremap = true, silent = true}
-    if opts then options = vim.tbl_extend("force", options, opts) end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-local opt = {silent = true, noremap = true}
+local opt = { silent = true, noremap = true }
 
 -- dont copy any deleted text , this is disabled by default so uncomment the below mappings if you want them
 --[[ remove this line
@@ -24,7 +26,6 @@ map("n", "<C-s>", ":w <CR>", opt)
 -- vim.cmd("inoremap jh <Esc>")
 
 -- compe stuff
-
 
 -- bufferline tab stuff
 map("n", "<S-t>", ":tabnew<CR>", opt) -- new tab

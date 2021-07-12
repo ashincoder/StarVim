@@ -1,7 +1,7 @@
 local opt = vim.opt
 local cmd = vim.cmd
 
-cmd "filetype plugin on"
+cmd("filetype plugin on")
 
 opt.ruler = false
 opt.hidden = true
@@ -38,50 +38,49 @@ opt.smartindent = Sv.smartindent
 opt.tabstop = Sv.tab_stop -- insert 4 spaces for a tab
 
 local disabled_built_ins = {
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "gzip",
-  "zip",
-  "zipPlugin",
-  "tar",
-  "tarPlugin", -- 'man',
-  "getscript",
-  "getscriptPlugin",
-  "vimball",
-  "vimballPlugin",
-  "2html_plugin",
-  "logipat",
-  "rrhelper",
-  "spellfile_plugin",
-  -- 'matchit', 'matchparen', 'shada_plugin',
+	"netrw",
+	"netrwPlugin",
+	"netrwSettings",
+	"netrwFileHandlers",
+	"gzip",
+	"zip",
+	"zipPlugin",
+	"tar",
+	"tarPlugin", -- 'man',
+	"getscript",
+	"getscriptPlugin",
+	"vimball",
+	"vimballPlugin",
+	"2html_plugin",
+	"logipat",
+	"rrhelper",
+	"spellfile_plugin",
+	-- 'matchit', 'matchparen', 'shada_plugin',
 }
 
 for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
+	vim.g["loaded_" .. plugin] = 1
 end
 
 if Sv.leader_key == " " or Sv.leader_key == "space" then
-  vim.g.mapleader = ' '
+	vim.g.mapleader = " "
 else
-  vim.g.mapleader = Sv.leader_key
+	vim.g.mapleader = Sv.leader_key
 end
 
 local M = {}
 
 function M.is_buffer_empty()
-    -- Check whether the current buffer is empty
-    return vim.fn.empty(vim.fn.expand("%:t")) == 1
+	-- Check whether the current buffer is empty
+	return vim.fn.empty(vim.fn.expand("%:t")) == 1
 end
 
 function M.has_width_gt(cols)
-    -- Check if the windows width is greater than a given number of columns
-    return vim.fn.winwidth(0) / 2 > cols
+	-- Check if the windows width is greater than a given number of columns
+	return vim.fn.winwidth(0) / 2 > cols
 end
 
 -- file extension specific tabbing
-vim.cmd(
-    [[autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
+vim.cmd([[autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
 
 return M

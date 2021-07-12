@@ -16,7 +16,7 @@ local g = vim.g
 g.tokyonight_style = "night"
 g.tokyonight_italic_functions = true
 g.tokyonight_italic_comments = true
-g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
+g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
 -------------------------------------------------------------
 -- Onedark Colorscheme
@@ -27,4 +27,3 @@ g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 -- g.onedark_style = 'deep'
 
 g.colors_name = Sv.colorscheme
-

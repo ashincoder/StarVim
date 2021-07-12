@@ -1,6 +1,7 @@
 local M = {}
 
 function M.reload_config()
+  vim.cmd "source ~/.config/nvim/lua/config.lua"
   vim.cmd "source ~/.config/nvim/sv-config.lua"
   vim.cmd "source ~/.config/nvim/lua/pluginList.lua"
   vim.cmd ":PackerInstall"

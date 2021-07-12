@@ -11,14 +11,40 @@ Sv.shell = "zsh"
 
 Sv.undofile = true
 
-Sv.leader_key = ' '
-Sv.colorscheme = 'tokyonight'
+Sv.leader_key = " "
+Sv.colorscheme = "tokyonight"
+Sv.autosave = false
+Sv.format_on_save = true
 
 -- TreeSitter parsers config
 -- Sv.treesitter.ensure_installed = "all"
--- Sv.treesitter.ignore_install = {"haskell"}
+Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
+-- lua
+Sv.lang.formatter.exe = "stylua"
+
+-- python
+-- Sv.lang.python.linter = 'flake8'
+Sv.lang.python.isort = true
+Sv.lang.python.diagnostics.virtual_text = true
+Sv.lang.python.analysis.use_library_code_types = true
+-- to change default formatter from yapf to black
+-- Sv.lang.python.formatter.exe = "black"
+-- Sv.lang.python.formatter.args = {"-"}
+
+-- go
+-- to change default formatter from gofmt to goimports
+-- Sv.lang.formatter.go.exe = "goimports"
+
+-- javascript
+Sv.lang.tsserver.linter = nil
+
+-- rust
+Sv.lang.rust.formatter = {
+	exe = "rustfmt",
+	args = { "--emit=stdout" },
+}
 
 -- Additional Plugins
 -- Sv.user_plugins = {
@@ -42,4 +68,4 @@ Sv.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Autocommands
--- Sv.user_autocommands = { }
+-- Sv.user_autocommands = {  }
