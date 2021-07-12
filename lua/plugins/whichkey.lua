@@ -148,7 +148,7 @@ M.config = function()
 			d = { ":Telescope file_browser<cr>", "Browse Files" },
 			s = { "<cmd>Telescope live_grep<cr>", "Search Word" },
 			b = { "<cmd>Telescope marks<cr>", "Search Word" },
-			m = { "<cmd>Neoformat<cr>", "Format File" },
+			m = { "<cmd>Format<cr>", "Format File" },
 			n = { "<cmd>enew<cr>", "New File" },
 		},
 		[":"] = { "<cmd>Telescope command_history<cr>", "Command History" },
