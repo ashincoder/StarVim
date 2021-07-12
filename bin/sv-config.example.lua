@@ -22,7 +22,7 @@ Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
 -- lua
-Sv.lang.formatter.exe = "stylua"
+Sv.lua.lang.formatter.exe = "stylua"
 
 -- python
 -- Sv.lang.python.linter = 'flake8'
