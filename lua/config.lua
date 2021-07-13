@@ -32,6 +32,10 @@ Sv = {
 	autosave = false,
 	format_on_save = true,
 
+	plugin = {
+		dashboard_disable = 0,
+	},
+
 	treesitter = {
 		ensure_installed = "all",
 		ignore_install = { "haskell" },
@@ -250,3 +254,5 @@ Sv = {
 		},
 	},
 }
+
+require("core.dashboard").config()
