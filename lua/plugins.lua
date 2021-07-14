@@ -32,8 +32,17 @@ return packer.startup(function(use)
 
 	-- color related stuff
 	-- TODO add more colors
+	-- use({
+	-- 	"ashincoder/Star-Colors",
+	-- })
+
 	use({
-		"ashincoder/Star-Colors",
+		"rktjmp/lush.nvim",
+		event = "VimEnter",
+		requires = { "elianiva/gruvy.nvim", "elianiva/icy.nvim" },
+		config = function()
+			require("lush")(require("lush_theme.icy")) -- activate the colourscheme
+		end,
 	})
 
 	use({
@@ -129,12 +138,8 @@ return packer.startup(function(use)
 			{ "nvim-lua/plenary.nvim", module = "plenary" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
-		keys = {
-			{ "n", "<Leader>h" },
-			{ "n", "<Leader>h" },
-			{ "n", "<Leader>s" },
-			{ "n", "<Leader>f" },
-		},
+		cmd = "Telescope",
+		event = "BufWinEnter",
 		config = function()
 			require("core.telescope").config()
 		end,
@@ -192,6 +197,7 @@ return packer.startup(function(use)
 		config = function()
 			require("core.dashboard").config()
 		end,
+		disable = Sv.plugin_disable.dashboard,
 	})
 
 	use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
