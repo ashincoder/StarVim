@@ -13,6 +13,7 @@ Sv.undofile = true
 
 Sv.leader_key = " "
 Sv.colorscheme = "tokyonight"
+
 Sv.autosave = false
 Sv.format_on_save = true
 
@@ -20,10 +21,11 @@ Sv.format_on_save = true
 -- Disable or Enable Plugins
 Sv.plugin = {
 	dashboard_disable = 0,
+	statusline_disable = 1,
 }
 
 -- TreeSitter parsers config
--- Sv.treesitter.ensure_installed = "all"
+Sv.treesitter.ensure_installed = { "python", "lua", "bash", "toml", "javascript", "html", "css" }
 Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
