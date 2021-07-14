@@ -103,6 +103,7 @@ M.config = function()
 		},
 		g = {
 			name = "+Git",
+			g = { "<Cmd>LazyGit<CR>", "Lazy git" },
 			c = { "<Cmd>Telescope git_commits<CR>", "commits" },
 			b = { "<Cmd>Telescope git_branches<CR>", "branches" },
 			s = { "<Cmd>Telescope git_status<CR>", "status" },

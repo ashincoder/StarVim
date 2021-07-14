@@ -141,6 +141,12 @@ return packer.startup(function(use)
 	})
 
 	-- git stuff
+
+	use({
+		"kdheepak/lazygit.nvim",
+		cmd = { "LazyGit", "LazyGitConfig", "LazyGitFilter" },
+	})
+
 	use({
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
