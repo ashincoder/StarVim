@@ -20,6 +20,7 @@ Sv.format_on_save = true
 -- Disable or Enable Plugins
 Sv.plugin = {
 	dashboard_disable = 0,
+	statusline_disable = 1,
 }
 
 -- TreeSitter parsers config
