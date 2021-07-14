@@ -134,7 +134,12 @@ return packer.startup(function(use)
 			{ "nvim-lua/plenary.nvim", module = "plenary" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
-		cmd = "Telescope",
+		keys = {
+			{ "n", "<Leader>h" },
+			{ "n", "<Leader>h" },
+			{ "n", "<Leader>s" },
+			{ "n", "<Leader>f" },
+		},
 		config = function()
 			require("core.telescope").config()
 		end,
