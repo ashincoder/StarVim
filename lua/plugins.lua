@@ -37,11 +37,6 @@ return packer.startup(function(use)
 	})
 
 	use({
-		"rktjmp/lush.nvim",
-		cmd = { "Lushify", "LushRunTutorial", "LushRunQuickStart" },
-	})
-
-	use({
 		"norcalli/nvim-colorizer.lua",
 		event = "BufRead",
 		config = function()
