@@ -12,9 +12,6 @@ end
 -- load all plugins
 require("plugins")
 
--- Colorscheme
-vim.g.colors_name = Sv.colorscheme
-
 -- Settings
 require("settings")
 
