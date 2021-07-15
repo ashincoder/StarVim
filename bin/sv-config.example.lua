@@ -12,7 +12,7 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = " "
-Sv.colorscheme = "tokyonight"
+require("colors.night-owl")
 Sv.autosave = false
 Sv.format_on_save = true
 
@@ -24,8 +24,7 @@ Sv.plugin = {
 }
 
 -- TreeSitter parsers config
--- Sv.treesitter.ensure_installed = "all"
-Sv.treesitter.ignore_install = { "haskell" }
+Sv.treesitter.ensure_installed = "lua"
 Sv.treesitter.highlight.enabled = true
 
 -- lua
