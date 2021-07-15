@@ -150,6 +150,7 @@ return packer.startup(function(use)
 	use({
 		"kdheepak/lazygit.nvim",
 		cmd = { "LazyGit", "LazyGitConfig", "LazyGitFilter" },
+    disable = Sv.plugin_disable.lazygit
 	})
 
 	use({
@@ -168,6 +169,7 @@ return packer.startup(function(use)
 		config = function()
 			require("core.whichkey").config()
 		end,
+    disable = Sv.plugin_disable.whichkey
 	})
 
 	use({
@@ -228,6 +230,7 @@ return packer.startup(function(use)
 		config = function()
 			require("core.zenmode").config()
 		end,
+    disable = Sv.plugin_disable.zenmode
 	})
 
 	--   use "alvan/vim-closetag" -- for html autoclosing tag

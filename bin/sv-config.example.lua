@@ -12,15 +12,22 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = " "
-Sv.colorscheme = "tokyonight"
+-- Sv.colorscheme = ""
 
 Sv.autosave = false
 Sv.format_on_save = true
 
+-- Sv.plugin_disable = {
+-- 	dashboard = false,
+-- 	whichkey = false,
+-- 	zenmode = false,
+-- 	lazygit = false,
+-- }
+
 -- TODO will add more plugins
 -- Disable or Enable Plugins
 Sv.plugin = {
-	dashboard_disable = 0,
+	dashboard_enter = 0,
 	statusline_disable = 1,
 }
 
