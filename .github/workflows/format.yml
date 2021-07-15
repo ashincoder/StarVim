@@ -1,11 +1,13 @@
 name: format
 on:
   push:
-    branches: '**'
+    branches: 
+      - 'dev'
+      - 'main'
   pull_request:
     branches:
-      - 'master'
-      - 'rolling'
+      - 'dev'
+      - 'main'
 
 jobs:
   stylua-check:
