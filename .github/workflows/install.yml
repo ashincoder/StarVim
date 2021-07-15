@@ -29,7 +29,7 @@ jobs:
         if: matrix.os == 'linux'
         run: |
           sudo apt-get install -y gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip build-essential
-          sudo bash ./utils/bin/install-latest-neovim
+          sudo bash ./bin/install-latest-neovim
       - name: Installl dependencies for OSX
         if: matrix.os == 'osx'
         run: |
@@ -38,7 +38,7 @@ jobs:
           brew install neovim
       - name: Install StarVim
         run: |
-          bash ./utils/installer/install.sh
+          bash ./bin/installer
       - name: Test StarVim PackerCompile
         run: if nvim --headless +PackerCompile -c ':qall' 2>&1|grep -q 'Error'; then false; fi
 
