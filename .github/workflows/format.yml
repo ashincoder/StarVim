@@ -23,5 +23,5 @@ jobs:
       
       - name: Check formatting
         run: |
-          cp ./utils/.stylua.toml .
+          cp ./.github/workflows/stylua.toml .
           stylua -c .
