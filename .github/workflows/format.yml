@@ -26,4 +26,4 @@ jobs:
       - name: Check formatting
         run: |
           cp ./.github/stylua.toml .
-          stylua -c .
+          stylua *.lua .
