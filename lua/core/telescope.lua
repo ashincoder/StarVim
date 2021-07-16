@@ -61,4 +61,10 @@ M.config = function()
 	require("telescope").load_extension("fzf")
 end
 
+M.search_dotfiles = function()
+	require("telescope.builtin").find_files({
+		cwd = "~/.config/nvim",
+	})
+end
+
 return M

@@ -1,6 +1,10 @@
 local M = {}
 
 M.config = function()
+	local status_ok, gl = pcall(require, "bufferline")
+	if not status_ok then
+		return
+	end
 	require("bufferline").setup({
 		options = {
 			offsets = { { filetype = "NvimTree", text = "", padding = 1 } },

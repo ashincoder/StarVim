@@ -103,16 +103,13 @@ M.config = function()
 		},
 		g = {
 			name = "+Git",
-			c = { "<Cmd>Telescope git_commits<CR>", "commits" },
-			b = { "<Cmd>Telescope git_branches<CR>", "branches" },
-			s = { "<Cmd>Telescope git_status<CR>", "status" },
+			g = { "<Cmd>LazyGit<CR>", "Open LazyGit" },
+			c = { "<Cmd>Telescope git_commits<CR>", "Commits Log" },
+			b = { "<Cmd>Telescope git_branches<CR>", "Branches Log" },
+			s = { "<Cmd>Telescope git_status<CR>", "Status Log" },
 		},
 		["h"] = {
 			name = "+Help",
-			r = {
-				"<cmd>lua require('utils').reload_config()<cr>",
-				"Reload Config",
-			},
 			t = { "<cmd>:Telescope builtin<cr>", "Telescope Builtins" },
 			c = { "<cmd>:Telescope commands<cr>", "Commands" },
 			h = { "<cmd>:Telescope help_tags<cr>", "Help Pages" },
@@ -139,17 +136,21 @@ M.config = function()
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Goto Symbol" },
 			h = { "<cmd>Telescope command_history<cr>", "Command History" },
 			m = { "<cmd>Telescope marks<cr>", "Jump to Mark" },
-			r = { "<cmd>lua require('spectre').open()<CR>", "Replace (Spectre)" },
 		},
 		f = {
 			name = "+Telescope",
 			f = { "<cmd>Telescope find_files<cr>", "Find File" },
+			c = { "<cmd>lua require('core.telescope').search_dotfiles()<cr>", "Nvim Config" },
 			o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 			d = { ":Telescope file_browser<cr>", "Browse Files" },
 			s = { "<cmd>Telescope live_grep<cr>", "Search Word" },
 			b = { "<cmd>Telescope marks<cr>", "Search Word" },
 			m = { "<cmd>Format<cr>", "Format File" },
 			n = { "<cmd>enew<cr>", "New File" },
+			r = {
+				"<cmd>lua require('utils').reload_config()<cr>",
+				"Reload Config",
+			},
 		},
 		[":"] = { "<cmd>Telescope command_history<cr>", "Command History" },
 		q = {

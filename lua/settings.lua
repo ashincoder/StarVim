@@ -5,7 +5,6 @@ cmd("filetype plugin on")
 
 opt.ruler = false
 opt.hidden = true
-opt.fileencoding = "utf-8" -- the encoding written to a file
 opt.hlsearch = Sv.hl_search
 opt.ignorecase = Sv.ignorecase
 opt.splitbelow = true

@@ -1,3 +1,5 @@
+-- TODO Lazy Load most of the plugins
+
 local packer = require("packer")
 
 packer.init({
@@ -14,6 +16,7 @@ packer.init({
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
+	-- Bufferline
 	use({
 		"akinsho/nvim-bufferline.lua",
 		config = function()
@@ -22,25 +25,25 @@ return packer.startup(function(use)
 		event = "BufWinEnter",
 	})
 
+	-- Statusline
 	use({
-		"hoob3rt/lualine.nvim",
+		"ashincoder/lualine.nvim",
 		config = function()
 			require("core.lualine").config()
 		end,
 		event = "BufWinEnter",
 	})
 
-	-- color related stuff
-	-- TODO add more colors
-	use({
-		"ashincoder/Star-Colors",
-	})
-
+	-- Colors -- TODO add more colors
 	use({
 		"rktjmp/lush.nvim",
-		cmd = { "Lushify", "LushRunTutorial", "LushRunQuickStart" },
+		event = "VimEnter",
+		config = function()
+			require("lush")(require("colors." .. Sv.colorscheme .. ".lua." .. Sv.colorscheme))
+		end,
 	})
 
+	-- Colorizer
 	use({
 		"norcalli/nvim-colorizer.lua",
 		event = "BufRead",
@@ -50,7 +53,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- language related plugins
+	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufRead",
@@ -59,6 +62,7 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- LSP
 	use({
 		"kabouzeid/nvim-lspinstall",
 		module = "lspinstall",
@@ -81,7 +85,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- load compe in insert mode only
+	-- Completion
 	use({
 		"hrsh7th/nvim-compe",
 		event = "InsertEnter",
@@ -103,6 +107,7 @@ return packer.startup(function(use)
 		},
 	})
 
+	-- Formatter
 	use({
 		"mhartington/formatter.nvim",
 		config = function()
@@ -111,7 +116,7 @@ return packer.startup(function(use)
 		event = "BufRead",
 	})
 
-	-- file managing , picker etc
+	-- File Explorer, Manager ..
 	use({
 		"kyazdani42/nvim-tree.lua",
 		cmd = "NvimTreeToggle",
@@ -120,6 +125,7 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Icons
 	use({
 		"kyazdani42/nvim-web-devicons",
 		config = function()
@@ -127,20 +133,30 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Lua Libraries
+	use({ "nvim-lua/popup.nvim", module = "popup" })
+	use({ "nvim-lua/plenary.nvim", module = "plenary" })
+
+	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
-			{ "nvim-lua/popup.nvim", module = "popup" },
-			{ "nvim-lua/plenary.nvim", module = "plenary" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
-		cmd = "Telescope",
+		event = "BufWinEnter",
 		config = function()
 			require("core.telescope").config()
 		end,
 	})
 
-	-- git stuff
+	-- Git stuff
+	-- TODO lazy load
+	-- use({
+	-- 	"kdheepak/lazygit.nvim",
+	-- 	event = "BufWinEnter",
+	-- 	disable = Sv.plugin_disable.lazygit,
+	-- })
+
 	use({
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
@@ -149,16 +165,17 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- misc plugins
-
+	-- WhichKey
 	use({
 		"folke/which-key.nvim",
 		keys = "<space>",
 		config = function()
 			require("core.whichkey").config()
 		end,
+		disable = Sv.plugin_disable.whichkey,
 	})
 
+	-- AutoPairs
 	use({
 		"windwp/nvim-autopairs",
 		after = "nvim-compe",
@@ -171,8 +188,10 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Matching parens
 	use({ "andymass/vim-matchup", event = "CursorMoved" })
 
+	-- Commentary
 	use({
 		"terrortylor/nvim-comment",
 		cmd = "CommentToggle",
@@ -181,16 +200,18 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Dashboard
 	use({
 		"glepnir/dashboard-nvim",
 		config = function()
 			require("core.dashboard").config()
 		end,
+		disable = Sv.plugin_disable.dashboard,
 	})
 
 	use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
 
-	-- load autosave only if its globally enabled
+	-- AutoSave
 	use({
 		"Pocco81/AutoSave.nvim",
 		config = function()
@@ -201,7 +222,7 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- smooth scroll
+	-- Smooth Scroll
 	use({
 		"karb94/neoscroll.nvim",
 		event = "WinScrolled",
@@ -210,16 +231,19 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Zen Mode
 	use({
 		"Pocco81/TrueZen.nvim",
 		cmd = { "TZAtaraxis", "TZMinimalist", "TZFocus" },
 		config = function()
 			require("core.zenmode").config()
 		end,
+		disable = Sv.plugin_disable.zenmode,
 	})
 
 	--   use "alvan/vim-closetag" -- for html autoclosing tag
 
+	-- Indent lines
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",

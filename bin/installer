@@ -114,7 +114,7 @@ installpacker() {
 cloneconfig() {
 	echo "Cloning StarVim configuration"
 	git clone --branch main https://github.com/ashincoder/StarVim.git ~/.config/nvim
-	cp $HOME/.config/nvim/bin/sv-config.example.lua $HOME/.config/nvim/sv-config.lua
+	cp "$HOME"/.config/nvim/bin/sv-config.example.lua "$HOME"/.config/nvim/sv-config.lua
 	nvim +PackerInstall
 
 	nvim +PackerSync
