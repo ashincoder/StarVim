@@ -27,10 +27,10 @@
 # Installation
 Dependencies :
 	- neovim (+0.5)
-	- pip3
-	- nodejs
-	- npm
-	- yarn
+	- pip3 
+	- nodejs (for lsp)
+	- npm (for lsp)
+	- yarn (for lsp)
 `bash <(curl -s https://raw.githubusercontent.com/ashincoder/StarVim/main/bin/installer)`
 
 ## Update Config
