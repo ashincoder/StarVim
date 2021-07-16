@@ -1,3 +1,8 @@
+local status_ok, formatter = pcall(require, "formatter")
+if not status_ok then
+	return
+end
+
 -- autoformat
 if Sv.format_on_save then
 	require("utils").define_augroups({
