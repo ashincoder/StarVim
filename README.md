@@ -45,7 +45,7 @@ nvim +PackerCompile
 - LspInstall for installing lsp servers easily.
 - Nvim-compe for autocompletion
 - Lspkind to show pictograms on autocompletion items
-- Using nvim-lsp
+- Using Nvim-lsp for language perfection and intellisense
 - Nvim-lspconfig for nvim-lps configuration
 - Telescope for file finding, picking, previewing
 - File navigation with Nvimtree
@@ -62,6 +62,11 @@ nvim +PackerCompile
 - Snip support from VSCode through vsnip supporting custom and predefined snips (friendly-snippets)
 
 - And the Killer Feature ! [![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)]()
+	
+## Screenshots
+	
+![DashBoard](https://github.com/ashincoder/StarVim/blob/screenshots/dashboard.png)
+Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tree/screenshots)
 
 ## Credits
 
