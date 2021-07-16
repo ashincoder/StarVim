@@ -12,17 +12,17 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = " "
--- Sv.colorscheme = ""
+-- Sv.colorscheme = ""  -- The only added colorscheme is stardark.
 
 Sv.autosave = false
 Sv.format_on_save = true
 
--- Sv.plugin_disable = {
--- 	dashboard = false,
--- 	whichkey = false,
--- 	zenmode = false,
--- 	lazygit = false,
--- }
+Sv.plugin_disable = {
+	dashboard = false,
+	whichkey = false,
+	zenmode = true,
+	lazygit = true,
+}
 
 -- TODO will add more plugins
 -- Disable or Enable Plugins
@@ -32,12 +32,12 @@ Sv.plugin = {
 }
 
 -- TreeSitter parsers config
-Sv.treesitter.ensure_installed = { "python", "lua", "bash", "toml", "javascript", "html", "css" }
+Sv.treesitter.ensure_installed = { "python", "lua", "bash", "javascript", "html", "css" }
 Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
 -- lua
--- Sv.lua.lang.formatter.exe = "stylua"
+-- Sv.lang.lua.formatter.exe = "stylua"
 
 -- python
 -- Sv.lang.python.linter = 'flake8'
