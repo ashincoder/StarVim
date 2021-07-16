@@ -27,8 +27,10 @@ Sv.plugin_disable = {
 -- TODO will add more plugins
 -- Disable or Enable Plugins
 Sv.plugin = {
-	dashboard_enter = 0,
-	statusline_disable = 1,
+	dashboard = {
+		dashboard_enter = 0,
+		statusline_disable = 1,
+	},
 }
 
 -- TreeSitter parsers config
