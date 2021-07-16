@@ -16,6 +16,8 @@ Sv = {
 	expandtab = true,
 	smartindent = true,
 
+	colorscheme = "stardark",
+
 	shell = "zsh",
 	cmdheight = 1,
 
@@ -34,7 +36,7 @@ Sv = {
 
 	plugin = {
 		dashboard = {
-			dashboard_enter = 0,
+			dashboard_disable = 0,
 			statusline_disable = 1,
 		},
 	},
