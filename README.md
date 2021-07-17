@@ -74,6 +74,10 @@ nvim +PackerCompile
 ![DashBoard](https://github.com/ashincoder/StarVim/blob/screenshots/dashboard.png)
 Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tree/screenshots)
 
+## Contributions
+- PR's are always welcome. [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+- While making a PR, to be more descriptive. :)
+
 ## Credits
 
 The following repositories helped me in improving StarVim
