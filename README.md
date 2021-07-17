@@ -46,30 +46,51 @@ nvim +PackerCompile
 
 > ! This will not affect your 'sv-config.lua'. So don't worry.
 
+# Why StarVim ?
+
+The answer everyone is waiting for. 
+
+Here you go :
+
+## Lazy loading
+StarVim is lazy loaded so hard that your machine does'nt feel the force of the arrival of StarVim. 
+- Almost 30+ plugins are installed. 6 plugins are loaded in the startup (including packer).
+
+## Colors
+StarVim will have more colorschemes with colorfulness. 
+- When colorschemes are loaded normally it takes a lot of time. But StarVim has also lazied the colorschemes
+
+## Extensibility
+StarVim can be configured within 1 file. Which makes everything simple for the user. 
+- While doing a git pull it does'nt affect the user config file. 'sv-config.lua'
+
++ If you still aren't convinced read the [Features](https://github.com/ashincoder/StarVim#features)
+
 # Features
 
-- Packer.nvim as package manager
-- Nvim-treesitter for syntax highlighting
-- LspInstall for installing lsp servers easily.
+- Autosave functionality.
+- Gitsigns for colors git signs 
+- Minimal status line (lualine)
+- File navigation with Nvimtree
 - Nvim-compe for autocompletion
+- Packer.nvim as package manager
+- Smooth scrolling with Neoscroll
+- Indent-blankline.Nvim for indentlines
+- Managing tabs, buffers with Bufferline
+- Nvim-treesitter for syntax highlighting
+- Nvim-lspconfig for nvim-lps configuration
+- LspInstall for installing lsp servers easily.
+- Telescope for file finding, picking, previewing
+- Nvim-autopairs, for autolosing braces and stuffs
+- Formatter.nvim for prettifying / formatting code
 - Lspkind to show pictograms on autocompletion items
 - Using Nvim-lsp for language perfection and intellisense
-- Nvim-lspconfig for nvim-lps configuration
-- Telescope for file finding, picking, previewing
-- File navigation with Nvimtree
 - Using plugins that are mouse friendly (Keyboard is better!)
-- managing tabs, buffers with Bufferline
-- Autosave functionality.
 - Icons on nvimtree, telescope, bufferline/statusline and almost everywhere! with nvim-web-devicons
-- Minimal status line (lualine)
-- Gitsigns (colored bars for git in my config)
-- Nvim-autopairs, for autolosing braces and stuffs
-- Neoformat for prettifying / formatting code
-- Indent-blankline.Nvim for indentlines
-- Smooth scrolling with Neoscroll
 - Snip support from VSCode through vsnip supporting custom and predefined snips (friendly-snippets)
 
 - And the Killer Feature ! [![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)]()
+- Lua makes it faster and smoother. More extensible
 	
 ## Screenshots
 	
@@ -77,8 +98,8 @@ nvim +PackerCompile
 Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tree/screenshots)
 
 ## Contributions
-- PR's are always welcome. [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
-- While making a PR, to be more descriptive. :)
+- PR's are always welcome , no matter what **So start today** . [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+- While making a PR, try to be more descriptive. :)
 
 ## Credits
 
@@ -90,9 +111,9 @@ The following repositories helped me in improving StarVim
 
 This project is still a work in progress. But there won't be any breakage.
 
-- [ ] Documentation, Wiki and stuff
-- [ ] More Custom Colorschemes 
 - [ ] Logo
 - [ ] Readme
 - [ ] Clean code
+- [ ] More Custom Colorschemes 
+- [ ] Documentation, Wiki and stuff
 
