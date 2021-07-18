@@ -5,7 +5,7 @@ M.config = function()
 	local fn = vim.fn
 	local plugins_count = fn.len(fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
 
-	g.dashboard_disable_at_vimenter = Sv.plugin.dashboard.disable
+	g.dashboard_disable_at_vimenter = Sv.plugin.dashboard.dashboard_enter
 
 	g.dashboard_disable_statusline = Sv.plugin.dashboard.statusline_disable
 
