@@ -38,8 +38,9 @@ return packer.startup(function(use)
 	use({
 		"rktjmp/lush.nvim",
 		event = "VimEnter",
+		requires = { "ashincoder/stardark" },
 		config = function()
-			require("lush")(require("colors." .. Sv.colorscheme .. ".lua." .. Sv.colorscheme))
+			require("lush")(require(Sv.colorscheme))
 		end,
 	})
 
