@@ -56,6 +56,9 @@ Here you go :
 StarVim is lazy loaded so hard that your machine does'nt feel the force of the arrival of StarVim. 
 - Almost 30+ plugins are installed. 6 plugins are loaded in the startup (including packer).
 
+This was tested in core i3 intel machine with a HDD. Will be fast as a *Star* in your machine 
+![Lazy](https://github.com/ashincoder/StarVim/blob/screenshots/lazy.png)
+
 ## Colors
 StarVim will have more colorschemes with colorfulness. 
 - When colorschemes are loaded normally it takes a lot of time. But StarVim has also lazied the colorschemes
