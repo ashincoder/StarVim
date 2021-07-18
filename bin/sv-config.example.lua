@@ -17,6 +17,7 @@ Sv.leader_key = " "
 Sv.autosave = false
 Sv.format_on_save = true
 
+-- Disable or Enable Plugins
 Sv.plugin_disable = {
 	dashboard = false,
 	whichkey = false,
@@ -24,8 +25,9 @@ Sv.plugin_disable = {
 	lazygit = true,
 }
 
+-- 0 is true
+-- 1 is false
 -- TODO will add more plugins
--- Disable or Enable Plugins
 Sv.plugin = {
 	dashboard = {
 		dashboard_enter = 0,

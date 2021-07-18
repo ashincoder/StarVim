@@ -36,7 +36,7 @@ Sv = {
 
 	plugin = {
 		dashboard = {
-			dashboard_disable = 0,
+			dashboard_enter = 0,
 			statusline_disable = 1,
 		},
 	},
