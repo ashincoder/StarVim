@@ -12,7 +12,7 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = " "
--- Sv.colorscheme = ""  -- The only added colorscheme is stardark.
+Sv.colorscheme = "stardark" -- The only added colorscheme is stardark and icy.
 
 Sv.autosave = false
 Sv.format_on_save = true
@@ -44,7 +44,6 @@ Sv.treesitter.highlight.enabled = true
 -- Sv.lang.lua.formatter.exe = "stylua"
 
 -- python
--- Sv.lang.python.linter = 'flake8'
 -- Sv.lang.python.isort = true
 -- Sv.lang.python.diagnostics.virtual_text = true
 -- Sv.lang.python.analysis.use_library_code_types = true
@@ -56,8 +55,7 @@ Sv.treesitter.highlight.enabled = true
 -- to change default formatter from gofmt to goimports
 -- Sv.lang.go.formatter.exe = "goimports"
 
--- javascript
--- Sv.lang.tsserver.linter = nil
+-- javascript formatter is prettier
 
 -- rust
 -- Sv.lang.rust.formatter = {
