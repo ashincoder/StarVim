@@ -1,26 +1,25 @@
--- TODO Lazy Load most of the plugins
+vim.cmd([[packadd packer.nvim]])
 
-local packer = require("packer")
+local present, _ = pcall(require, "core.packer")
 
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "single" })
-		end,
-	},
-	git = {
-		clone_timeout = 600, -- Timeout, in seconds, for git clones
-	},
-})
+if present then
+	Packer = require("packer")
+else
+	return false
+end
 
-return packer.startup(function(use)
-	use("wbthomason/packer.nvim")
+local use = Packer.use
+
+return Packer.startup(function()
+	use({ "wbthomason/packer.nvim", event = "VimEnter" })
+
+	------------------------ UI ---------------------------
 
 	-- Bufferline
 	use({
 		"akinsho/nvim-bufferline.lua",
 		config = function()
-			require("core.bufferline").config()
+			require("core.bufferline")
 		end,
 		event = "BufWinEnter",
 	})
@@ -29,7 +28,7 @@ return packer.startup(function(use)
 	use({
 		"ashincoder/lualine.nvim",
 		config = function()
-			require("core.lualine").config()
+			require("core.lualine")
 		end,
 		event = "BufWinEnter",
 	})
@@ -38,7 +37,7 @@ return packer.startup(function(use)
 	use({
 		"rktjmp/lush.nvim",
 		event = "VimEnter",
-		requires = { "ashincoder/stardark" },
+		requires = { "ashincoder/stardark", "ashincoder/icy.nvim" },
 		config = function()
 			require("lush")(require(Sv.colorscheme))
 		end,
@@ -54,12 +53,38 @@ return packer.startup(function(use)
 		end,
 	})
 
+	------------------------ Language specific ---------------------------
+
+	-- Completion
+	use({
+		"hrsh7th/nvim-compe",
+		event = "InsertEnter",
+		config = function()
+			require("core.compe")
+		end,
+		wants = { "LuaSnip" },
+		requires = {
+			{
+				"L3MON4D3/LuaSnip",
+				wants = "friendly-snippets",
+				event = "InsertCharPre",
+				config = function()
+					require("core.luasnip")
+				end,
+			},
+			{
+				"rafamadriz/friendly-snippets",
+				event = "InsertCharPre",
+			},
+		},
+	})
+
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		event = "BufRead",
 		config = function()
-			require("core.treesitter").config()
+			require("core.treesitter")
 		end,
 	})
 
@@ -72,9 +97,16 @@ return packer.startup(function(use)
 	use({
 		"neovim/nvim-lspconfig",
 		event = "BufRead",
-		requires = { "ray-x/lsp_signature.nvim" },
 		config = function()
-			require("core.lspconfig").config()
+			require("core.lsp_config")
+		end,
+	})
+
+	use({
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		config = function()
+			require("core.lsp_sign")
 		end,
 	})
 
@@ -86,28 +118,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Completion
-	use({
-		"hrsh7th/nvim-compe",
-		event = "InsertEnter",
-		config = function()
-			require("core.compe").config()
-		end,
-		wants = { "LuaSnip" },
-		requires = {
-			{
-				"L3MON4D3/LuaSnip",
-				wants = "friendly-snippets",
-				event = "InsertCharPre",
-				config = function()
-					require("core.compe").snippets()
-				end,
-			},
-			"rafamadriz/friendly-snippets",
-			event = "InsertCharPre",
-		},
-	})
-
 	-- Formatter
 	use({
 		"mhartington/formatter.nvim",
@@ -117,20 +127,30 @@ return packer.startup(function(use)
 		event = "BufRead",
 	})
 
-	-- File Explorer, Manager ..
+	------------------------ File manager, Picker, Fuzzy finder ---------------------------
+
+	-- Icons
+	use({
+		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
+		config = function()
+			require("core.gitsigns")
+		end,
+	})
+
+	use({
+		"kyazdani42/nvim-web-devicons",
+		after = "lush.nvim",
+		config = function()
+			require("core.icons")
+		end,
+	})
+
 	use({
 		"kyazdani42/nvim-tree.lua",
 		cmd = "NvimTreeToggle",
 		config = function()
-			require("core.nvimtree").config()
-		end,
-	})
-
-	-- Icons
-	use({
-		"kyazdani42/nvim-web-devicons",
-		config = function()
-			require("core.icons").config()
+			require("core.nvimtree")
 		end,
 	})
 
@@ -141,37 +161,30 @@ return packer.startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = {
-			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+		keys = {
+			{ "n", "<Leader>f" },
 		},
-		event = "BufWinEnter",
 		config = function()
-			require("core.telescope").config()
+			require("core.telescope")
 		end,
 	})
 
 	-- Git stuff
 	-- TODO lazy load
-	-- use({
-	-- 	"kdheepak/lazygit.nvim",
-	-- 	event = "BufWinEnter",
-	-- 	disable = Sv.plugin_disable.lazygit,
-	-- })
-
 	use({
-		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
-		config = function()
-			require("core.gitsigns").config()
-		end,
+		"kdheepak/lazygit.nvim",
+		event = "BufWinEnter",
+		disable = Sv.plugin_disable.lazygit,
 	})
+
+	------------------------ Misc Plugins ---------------------------
 
 	-- WhichKey
 	use({
 		"folke/which-key.nvim",
 		keys = "<space>",
 		config = function()
-			require("core.whichkey").config()
+			require("core.whichkey")
 		end,
 		disable = Sv.plugin_disable.whichkey,
 	})
@@ -181,11 +194,7 @@ return packer.startup(function(use)
 		"windwp/nvim-autopairs",
 		after = "nvim-compe",
 		config = function()
-			require("nvim-autopairs").setup()
-			require("nvim-autopairs.completion.compe").setup({
-				map_cr = true,
-				map_complete = true, -- insert () func completion
-			})
+			require("core.autopairs")
 		end,
 	})
 
@@ -205,7 +214,7 @@ return packer.startup(function(use)
 	use({
 		"glepnir/dashboard-nvim",
 		config = function()
-			require("core.dashboard").config()
+			require("core.dashboard")
 		end,
 		disable = Sv.plugin_disable.dashboard,
 	})
@@ -216,10 +225,10 @@ return packer.startup(function(use)
 	use({
 		"Pocco81/AutoSave.nvim",
 		config = function()
-			require("core.zenmode").autoSave()
+			require("core.autosave")
 		end,
 		cond = function()
-			return vim.g.auto_save == Sv.autosave
+			return Sv.autosave == true
 		end,
 	})
 
@@ -237,7 +246,7 @@ return packer.startup(function(use)
 		"Pocco81/TrueZen.nvim",
 		cmd = { "TZAtaraxis", "TZMinimalist", "TZFocus" },
 		config = function()
-			require("core.zenmode").config()
+			require("core.zenmode")
 		end,
 		disable = Sv.plugin_disable.zenmode,
 	})
@@ -249,11 +258,11 @@ return packer.startup(function(use)
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
 		setup = function()
-			require("utils").blankline()
+			require("core.blankline")
 		end,
 	})
 
 	for _, plugin in pairs(Sv.user_plugins) do
-		packer.use(plugin)
+		Packer.use(plugin)
 	end
 end)
