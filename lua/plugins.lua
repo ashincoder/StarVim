@@ -143,7 +143,8 @@ return packer.startup(function(use)
 		requires = {
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 		},
-		event = "BufWinEnter",
+		cmd = "Telescope",
+		module = "telescope",
 		config = function()
 			require("core.telescope").config()
 		end,
