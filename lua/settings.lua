@@ -8,6 +8,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = Sv.termguicolors -- set term gui colors (most terminals support this)
 opt.cul = true
+opt.scrolloff = Sv.scrolloff
 opt.mouse = "a" -- enable mouse in neovim
 opt.signcolumn = "yes"
 opt.cmdheight = Sv.cmdheight

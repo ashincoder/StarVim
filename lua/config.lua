@@ -27,6 +27,7 @@ Sv = {
 
 	pumheight = 20,
 	timeoutlen = 200,
+  scrolloff = 5,
 
 	ignorecase = true,
 	hl_search = true,
@@ -238,7 +239,6 @@ Sv = {
 		terraform = {},
 		tsserver = {
 			-- @usage can be 'eslint' or 'eslint_d'
-			linter = "",
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
 				signs = true,
