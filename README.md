@@ -111,10 +111,10 @@ Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tre
 
 ## Questions
 If you have any doubts you can freely ask on these following sites:
-	- [Gitter](https://gitter.im/starvim-conf/community)
-	- [Reddit](https://www.reddit.com/r/StarVim/)
-	- [Discord](https://discord.com/channels/866158163900366879/866158164335394830)
-	- [Youtube](https://www.youtube.com/channel/UCZqKL3vIdyHUiLuR1vYwVgw)
+- [Gitter](https://gitter.im/starvim-conf/community)
+- [Reddit](https://www.reddit.com/r/StarVim/)	
+- [Discord](https://discord.com/channels/866158163900366879/866158164335394830)
+- [Youtube](https://www.youtube.com/channel/UCZqKL3vIdyHUiLuR1vYwVgw)
 
 ## Credits
 
