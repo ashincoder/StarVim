@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[Install](#install) • [Why StarVim?](#why-starvim-) • [Screenshots](https://github.com/ashincoder/StarVim/tree/screenshots) • [Contribute](#contributions)
+[Install](#installation) • [Why StarVim?](#why-starvim-) • [Screenshots](https://github.com/ashincoder/StarVim/tree/screenshots) • [Contribute](#contributions)
 
 </div>
 
