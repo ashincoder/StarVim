@@ -1,6 +1,6 @@
 <h1 align="center">StarVim</h1> 
 
-[Install](#install) • [Why StarVim?](#why starvim?) • [Screenshots](https://github.com/ashincoder/StarVim/tree/screenshots) • [Contribute](#contributions)
+[Install](#install) • [Why StarVim?](#why-starvim-) • [Screenshots](https://github.com/ashincoder/StarVim/tree/screenshots) • [Contribute](#contributions)
 
 <h6 align="center">A IDE wrapper which is beyond the moon 🌚 and above the stars ⭐ :O!</h1>
 
