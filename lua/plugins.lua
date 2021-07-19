@@ -161,9 +161,8 @@ return Packer.startup(function()
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		keys = {
-			{ "n", "<Leader>f" },
-		},
+		cmd = "Telescope",
+		module = "telescope",
 		config = function()
 			require("core.telescope")
 		end,
