@@ -1,5 +1,7 @@
 <h1 align="center">StarVim</h1> 
 
+[Install](#install) • [Why StarVim?](#why starvim?) • [Screenshots](https://github.com/ashincoder/StarVim/tree/screenshots) • [Contribute](#contributions)
+
 <h6 align="center">A IDE wrapper which is beyond the moon 🌚 and above the stars ⭐ :O!</h1>
 
 </div>
@@ -22,6 +24,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/ashincoder/StarVim.svg?style=flat-square&label=Issues&color=fc0330)](https://github.com/siduck76/StarVim/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/ashincoder/StarVim.svg?style=flat-square&label=Last%20Commit&color=58eb34)](https://github.com/siduck76/StarVim/pulse) 
 	      
+![DashBoard](https://github.com/ashincoder/StarVim/blob/screenshots/dashboard.png)
   </div>
 
 # Installation
