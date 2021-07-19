@@ -1,7 +1,4 @@
 local opt = vim.opt
-local cmd = vim.cmd
-
-cmd("filetype plugin on")
 
 opt.ruler = false
 opt.hidden = true
@@ -9,7 +6,7 @@ opt.hlsearch = Sv.hl_search
 opt.ignorecase = Sv.ignorecase
 opt.splitbelow = true
 opt.splitright = true
-opt.termguicolors = true -- set term gui colors (most terminals support this)
+opt.termguicolors = Sv.termguicolors -- set term gui colors (most terminals support this)
 opt.cul = true
 opt.mouse = "a" -- enable mouse in neovim
 opt.signcolumn = "yes"
@@ -24,6 +21,16 @@ opt.undofile = Sv.undofile -- enable persisten undo
 opt.swapfile = Sv.swapfile -- creates a swapfile
 opt.spell = Sv.spell
 opt.spelllang = Sv.spelllang
+opt.shortmess:append("sI") -- Disable nvim intro
+vim.cmd("let &fcs='eob: '")
+
+vim.cmd([[
+    syntax off
+    filetype off
+    filetype plugin indent off
+]])
+
+opt.whichwrap:append("<>hl") -- Able to move through a setence with 'h' and 'l'
 
 -- Numbers
 opt.number = Sv.number

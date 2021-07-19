@@ -6,7 +6,7 @@ USER = vim.fn.expand("$USER")
 
 Sv = {
 	number = true,
-	relativenumber = false,
+	relativenumber = true,
 	number_width = 4,
 	spell = false,
 	spelllang = "en",
@@ -16,6 +16,7 @@ Sv = {
 	expandtab = true,
 	smartindent = true,
 
+	termguicolors = true,
 	colorscheme = "stardark",
 
 	shell = "zsh",
@@ -157,7 +158,6 @@ Sv = {
 		},
 		python = {
 			-- @usage can be flake8 or yapf
-			linter = "",
 			isort = false,
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
@@ -197,7 +197,6 @@ Sv = {
 				exe = "rustfmt",
 				args = { "--emit=stdout", "--edition=2018" },
 			},
-			linter = "",
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
 				signs = true,
@@ -206,7 +205,6 @@ Sv = {
 		},
 		sh = {
 			-- @usage can be 'shellcheck'
-			linter = "shellcheck",
 			-- @usage can be 'shfmt'
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
@@ -261,5 +259,3 @@ Sv = {
 		},
 	},
 }
-
-require("core.dashboard").config()
