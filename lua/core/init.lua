@@ -1,0 +1,5 @@
+require("core.config")
+require("core.utils.settings")
+require("core.utils")
+require("core.keybindings")
+require("modules")
