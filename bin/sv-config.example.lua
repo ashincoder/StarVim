@@ -36,7 +36,50 @@ Sv.plugin = {
 }
 
 -- TreeSitter parsers config
-Sv.treesitter.ensure_installed = { "python", "lua", "bash", "javascript", "html", "css" }
+Sv.treesitter.ensure_installed = {
+	"lua",
+	-- "bash",
+	-- "json",
+	-- "python",
+	-- "c",
+	-- "c_sharp",
+	-- "clojure",
+	-- "comment",
+	-- "cpp",
+	-- "commonlisp",
+	-- "cuda",
+	-- "dart",
+	-- "devicetree",
+	-- "dockerfile",
+	-- "elixir",
+	-- "erlang",
+	-- "go",
+	-- "fish",
+	-- "haskell",
+	-- "java",
+	-- "jsdoc",
+	-- "graphql",
+	-- "julia",
+	-- "kotlin",
+	-- "ledger",
+	-- "latex",
+	-- "php",
+	-- "nix",
+	-- "ocamel",
+	-- "ql",
+	-- "regex",
+	-- "ruby",
+	-- "rust",
+	-- "rst",
+	-- "scss",
+	-- "sparql",
+	-- "teal",
+	-- "toml",
+	-- "typescript",
+	-- "vue",
+	-- "yaml",
+	-- "zig"
+}
 Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
