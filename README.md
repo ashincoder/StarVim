@@ -109,6 +109,13 @@ Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tre
 - PR's are always welcome , no matter what **So start today** . [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
 - While making a PR, try to be more descriptive. :)
 
+## Questions
+If you have any doubts you can freely ask on these following sites:
+- [Gitter](https://gitter.im/starvim-conf/community)
+- [Reddit](https://www.reddit.com/r/StarVim/)	
+- [Discord](https://discord.com/channels/866158163900366879/866158164335394830)
+- [Youtube](https://www.youtube.com/channel/UCZqKL3vIdyHUiLuR1vYwVgw)
+
 ## Credits
 
 The following repositories helped me in improving StarVim
