@@ -1,7 +1,7 @@
 local M = {}
 
 M.star_root = vim.fn.expand("$HOME/.config/nvim")
-M.starrc = vim.fn.expand("$HOME/.config/nvim/lua/core/config/starrc.lua")
+M.star_logs = DATA_PATH .. "/star.log"
 
 -- mappings wrapper, extracted from
 M.map = function(mode, lhs, rhs, opts)

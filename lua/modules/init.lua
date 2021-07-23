@@ -224,12 +224,14 @@ return Packer.startup(function()
 	-- Terminal
 	local disabled_terminal = functions.is_plugin_disabled("terminal")
 	use({
-		"numtostr/FTerm.nvim",
-		keys = "<space>t",
+		"akinsho/nvim-toggleterm.lua",
 		config = function()
-			require("FTerm").setup()
+			require("modules.configs.toggleterm")
 		end,
 		disable = disabled_terminal,
+		module = { "toggleterm", "toggleterm.terminal" },
+		cmd = { "ToggleTerm", "TermExec" },
+		keys = { "n", "<space>t" },
 	})
 
 	-- WhichKey
@@ -240,7 +242,6 @@ return Packer.startup(function()
 		config = function()
 			require("modules.configs.whichkey")
 		end,
-		--	disable = not Sv.plugin_enable.whichkey,
 		disable = disabled_whichkey,
 	})
 
@@ -275,7 +276,6 @@ return Packer.startup(function()
 			require("modules.configs.dashboard")
 		end,
 		cmd = "Dashboard",
-		-- disable = not Sv.plugin_enable.dashboard,
 		disable = disabled_dashboard,
 	})
 
@@ -298,7 +298,6 @@ return Packer.startup(function()
 		config = function()
 			require("modules.configs.zenmode")
 		end,
-		-- 		disable = not Sv.plugin_enable.zenmode,
 		disable = disabled_zen,
 	})
 

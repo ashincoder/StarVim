@@ -1,12 +1,5 @@
 local term
 
--- selene: allow(undefined_variable)
-if packer_plugins and packer_plugins["nvim-toggleterm.lua"] then
-	term = require("toggleterm.terminal").Terminal
-else
-	print("Star runner needs toggleterm plugin, please uncomment the 'terminal' entry in your starrc")
-end
-
 local M = {}
 
 -- Currently supported languages,

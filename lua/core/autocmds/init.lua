@@ -24,11 +24,6 @@ M.define_augroups({
 			"lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 200})",
 		},
 		{
-			"BufWinEnter",
-			"*",
-			"setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
-		},
-		{
 			"BufRead",
 			"*",
 			"setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
@@ -39,7 +34,6 @@ M.define_augroups({
 			"setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 		},
 		{ "BufWritePost", "sv-config.lua", "lua require('core.functions').reload_config()" },
-		-- { "VimLeavePre", "*", "set title set titleold=" },
 		{
 			"TextChanged,InsertLeave",
 			"<buffer>",

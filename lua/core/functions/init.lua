@@ -29,14 +29,14 @@ M.check_plugin = function(plugin_name, path)
 	return vim.fn.isdirectory(vim.fn.stdpath("data") .. "/site/pack/packer/" .. path .. "/" .. plugin_name) == 1
 end
 
--- is_plugin_disabled checks if the given plugin is disabled in starrc
+-- is_plugin_disabled checks if the given plugin is disabled in doomrc
 -- @tparam string plugin The plugin identifier, e.g. statusline
 -- @return bool
 M.is_plugin_disabled = function(plugin)
 	local starrc = require("core.config.starrc").load_starrc()
 
 	-- Iterate over all starrc sections (e.g. ui) and their plugins
-	for _, section in ipairs(starrc) do
+	for _, section in pairs(starrc) do
 		if utils.has_value(section, plugin) then
 			return false
 		end
