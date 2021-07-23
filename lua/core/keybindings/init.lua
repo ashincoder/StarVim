@@ -1,19 +1,13 @@
-local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local utils = require("utils")
 
-local opt = { silent = true, noremap = true }
+local opt = { silent = true }
 
 -- dont copy any deleted text , this is disabled by default so uncomment the below mappings if you want them
 --[[ remove this line
 
-map("n", "dd", [=[ "_dd ]=], opt)
-map("v", "dd", [=[ "_dd ]=], opt)
-map("v", "x", [=[ "_x ]=], opt)
+utils.map("n", "dd", [=[ "_dd ]=], opt)
+utils.map("v", "dd", [=[ "_dd ]=], opt)
+utils.map("v", "x", [=[ "_x ]=], opt)
 
  this line too ]]
 
@@ -69,51 +63,52 @@ function _G.completions()
 end
 
 --  compe mappings
-map("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
-map("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
-map("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-map("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-map("i", "<CR>", "v:lua.completions()", { expr = true })
+utils.map("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
+utils.map("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
+utils.map("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+utils.map("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+utils.map("i", "<CR>", "v:lua.completions()", { expr = true })
 
 -- copy whole file content
-map("n", "<C-a>", [[ <Cmd> %y+<CR>]], opt)
+utils.map("n", "<C-a>", [[ <Cmd> %y+<CR>]], opt)
 
 -- Save with Ctrl-s
-map("n", "<C-s>", ":w <CR>", opt)
+utils.map("n", "<C-s>", ":w <CR>", opt)
 
 -- Esc with jh
-map("i", "jk", "<esc>", {})
-map("v", "jk", "<esc>", {})
-map("t", "jk", "<esc>", {})
+utils.map("i", "jk", "<esc>", {})
+utils.map("v", "jk", "<esc>", {})
 
 -- bufferline tab stuff
-map("n", "<S-t>", ":enew<CR>", opt) -- new tab
-map("n", "<S-x>", ":bd!<CR>", opt) -- close tab
+utils.map("n", "<S-t>", ":enew<CR>", opt) -- new tab
+utils.map("n", "<S-x>", ":bd!<CR>", opt) -- close tab
 
 -- move between tabs
-map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], opt)
-map("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]], opt)
+utils.map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], opt)
+utils.map("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]], opt)
 
 -- better indenting
-map("v", "<", "<gv", opt)
-map("v", ">", ">gv", opt)
+utils.map("v", "<", "<gv", opt)
+utils.map("v", ">", ">gv", opt)
 
 -- use ESC to turn off search highlighting
-map("n", "<Esc>", ":noh<CR>", opt)
+utils.map("n", "<Esc>", ":noh<CR>", opt)
+
+-- use ESC to turn off search highlighting
+utils.map("t", "<Esc>", "<C-\\><C-n>", opt)
 
 -- Move selected line / block of text in visual mode
-map("x", "K", ":move '<-2<CR>gv-gv", opt)
-map("x", "J", ":move '>+1<CR>gv-gv", opt)
-
+utils.map("x", "K", ":move '<-2<CR>gv-gv", opt)
+utils.map("x", "J", ":move '>+1<CR>gv-gv", opt)
 -- QuickFix
-map("n", "]q", ":cNext<CR>", opt)
-map("n", "[q", ":cPrev<CR>", opt)
+utils.map("n", "]q", ":cNext<CR>", opt)
+utils.map("n", "[q", ":cPrev<CR>", opt)
 
 -- Don't copy the replaced text after pasting in visual mode
-map("v", "p", '"_dP', opt)
+utils.map("v", "p", '"_dP', opt)
 
 -- better window movement
-map("n", "<C-h>", "<C-w>h", opt)
-map("n", "<C-j>", "<C-w>j", opt)
-map("n", "<C-k>", "<C-w>k", opt)
-map("n", "<C-l>", "<C-w>l", opt)
+utils.map("n", "<C-h>", "<C-w>h", opt)
+utils.map("n", "<C-j>", "<C-w>j", opt)
+utils.map("n", "<C-k>", "<C-w>k", opt)
+utils.map("n", "<C-l>", "<C-w>l", opt)

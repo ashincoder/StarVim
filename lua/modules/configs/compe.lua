@@ -19,11 +19,11 @@ compe.setup({
 	max_menu_width = 100,
 	documentation = true,
 	source = {
-		buffer = { kind = "﬘", true },
-		luasnip = { kind = "﬌", true },
+		orgmode = true,
 		nvim_lsp = true,
 		nvim_lua = true,
-		orgmode = true,
+		buffer = { kind = "﬘", true },
+		luasnip = { kind = "﬌", true },
 	},
 })
 

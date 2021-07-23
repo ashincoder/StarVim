@@ -119,6 +119,7 @@ local mappings = {
 	},
 	["c"] = {
 		name = "+Code",
+		a = { "<cmd>Telescope lsp_code_actions<cr>", "Code Actions" },
 		d = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declarations" },
 		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
 		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
@@ -152,7 +153,7 @@ local mappings = {
 	f = {
 		name = "+Telescope",
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		c = { "<cmd>lua require('core.utils').search_dotfiles()<cr>", "Nvim Config" },
+		c = { "<cmd>lua require('core.functions').search_dotfiles()<cr>", "Nvim Config" },
 		o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		d = { ":Telescope file_browser<cr>", "Browse Files" },
 		s = { "<cmd>Telescope live_grep<cr>", "Search Word" },
@@ -160,7 +161,7 @@ local mappings = {
 		m = { "<cmd>Format<cr>", "Format File" },
 		n = { "<cmd>enew<cr>", "New File" },
 		r = {
-			"<cmd>lua require('core.utils').reload_config()<cr>",
+			"<cmd>lua require('core.functions').reload_config()<cr>",
 			"Reload Config",
 		},
 	},
@@ -179,7 +180,8 @@ local mappings = {
 	},
 	t = {
 		name = "+Terminal",
-		t = { "<cmd> terminal<cr>", "New Terminal" },
+		t = { "<cmd> lua require'FTerm'.open() <cr>", "Open Float Terminal" },
+		c = { "<cmd> lua require'FTerm'.close() <cr>", "Close Float Terminal" },
 		v = { "<cmd> 10new +terminal | setlocal nobuflisted <cr>", "Vert Split Terminal" },
 		s = { "<cmd> vnew +terminal | setlocal nobuflisted <cr>", "Vert Split Terminal" },
 	},

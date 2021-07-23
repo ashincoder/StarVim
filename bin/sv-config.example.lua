@@ -108,12 +108,8 @@ Sv.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 -- Sv.user_plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---         "ray-x/lsp_signature.nvim",
---         config = function() require"lsp_signature".on_attach() end,
---         event = "InsertEnter"
---     }
+--     {"ashincoder/gruvbox.nvim"},
+--     {"ashincoder/icy.nvim"},
 -- }
 
 -- Additional Leader bindings for WhichKey

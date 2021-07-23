@@ -1,3 +1,5 @@
+local functions = require("core.functions")
+
 vim.cmd([[packadd packer.nvim]])
 
 local present, _ = pcall(require, "modules.configs.packer")
@@ -16,34 +18,39 @@ return Packer.startup(function()
 	------------------------ UI ---------------------------
 
 	-- Bufferline
+	local disabled_tabline = functions.is_plugin_disabled("tabline")
 	use({
 		"akinsho/nvim-bufferline.lua",
 		config = function()
 			require("modules.configs.bufferline")
 		end,
 		event = "BufWinEnter",
+		disable = disabled_tabline,
 	})
 
 	-- Statusline
+	local disabled_statusline = functions.is_plugin_disabled("statusline")
 	use({
 		"ashincoder/lualine.nvim",
 		config = function()
 			require("modules.configs.lualine")
 		end,
 		event = "BufWinEnter",
+		disable = disabled_statusline,
 	})
 
 	-- Colors -- TODO add more colors
 	use({
 		"rktjmp/lush.nvim",
 		event = "VimEnter",
-		requires = { "ashincoder/stardark", "ashincoder/icy.nvim" },
+		requires = { "ashincoder/stardark" },
 		config = function()
 			require("lush")(require(Sv.colorscheme))
 		end,
 	})
 
 	-- Colorizer
+	local disabled_colorizer = functions.is_plugin_disabled("colorizer")
 	use({
 		"norcalli/nvim-colorizer.lua",
 		event = "BufRead",
@@ -51,6 +58,7 @@ return Packer.startup(function()
 			require("colorizer").setup()
 			vim.cmd("ColorizerReloadAllBuffers")
 		end,
+		disable = disabled_colorizer,
 	})
 
 	------------------------ Language specific ---------------------------
@@ -93,14 +101,23 @@ return Packer.startup(function()
 	use({
 		"kabouzeid/nvim-lspinstall",
 		module = "lspinstall",
+		disable = disabled_lsp,
 	})
 
+	local disabled_lsp = functions.is_plugin_disabled("lsp")
 	use({
 		"neovim/nvim-lspconfig",
 		event = "BufRead",
 		config = function()
 			require("modules.configs.lsp_config")
 		end,
+		disable = disabled_lsp,
+	})
+
+	use({
+		"kosayoda/nvim-lightbulb",
+		module = "nvim-lightbulb",
+		disable = disabled_lsp,
 	})
 
 	use({
@@ -109,6 +126,22 @@ return Packer.startup(function()
 		config = function()
 			require("modules.configs.lsp_sign")
 		end,
+		disable = disabled_lsp,
+	})
+
+	-- Viewer & finder for LSP symbols and tags
+	local disabled_outline = functions.is_plugin_disabled("symbols")
+	use({
+		"simrat39/symbols-outline.nvim",
+		config = function()
+			require("modules.configs.symbols")
+		end,
+		disable = disabled_outline,
+		cmd = {
+			"SymbolsOutline",
+			"SymbolsOutlineOpen",
+			"SymbolsOutlineClose",
+		},
 	})
 
 	use({
@@ -117,26 +150,31 @@ return Packer.startup(function()
 		config = function()
 			require("lspkind").init()
 		end,
+		disable = disabled_lsp,
 	})
 
 	-- Formatter
+	local disabled_formatter = functions.is_plugin_disabled("formatter")
 	use({
 		"mhartington/formatter.nvim",
 		config = function()
 			require("modules.configs.formatter")
 		end,
 		event = "BufRead",
+		disable = disabled_formatter,
 	})
 
 	------------------------ File manager, Picker, Fuzzy finder ---------------------------
 
 	-- Icons
+	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
 	use({
 		"lewis6991/gitsigns.nvim",
 		event = "BufRead",
 		config = function()
 			require("modules.configs.gitsigns")
 		end,
+		disable = disabled_gitsigns,
 	})
 
 	use({
@@ -147,12 +185,14 @@ return Packer.startup(function()
 		end,
 	})
 
+	local disabled_tree = functions.is_plugin_disabled("nvim-tree")
 	use({
 		"kyazdani42/nvim-tree.lua",
 		cmd = "NvimTreeToggle",
 		config = function()
 			require("modules.configs.nvimtree")
 		end,
+		disable = disabled_tree,
 	})
 
 	-- Lua Libraries
@@ -160,6 +200,7 @@ return Packer.startup(function()
 	use({ "nvim-lua/plenary.nvim", module = "plenary" })
 
 	-- Telescope
+	local disabled_telescope = functions.is_plugin_disabled("telescope")
 	use({
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
@@ -167,26 +208,40 @@ return Packer.startup(function()
 		config = function()
 			require("modules.configs.telescope")
 		end,
+		disable = disabled_telescope,
 	})
 
 	-- Git stuff
-	-- TODO lazy load
+	local disabled_lazygit = functions.is_plugin_disabled("lazygit")
 	use({
 		"kdheepak/lazygit.nvim",
+		disable = disabled_lazygit,
 		cmd = { "LazyGit", "LazyGitConfig" },
-		disable = Sv.plugin_disable.lazygit,
 	})
 
 	------------------------ Misc Plugins ---------------------------
 
+	-- Terminal
+	local disabled_terminal = functions.is_plugin_disabled("terminal")
+	use({
+		"numtostr/FTerm.nvim",
+		keys = "<space>t",
+		config = function()
+			require("FTerm").setup()
+		end,
+		disable = disabled_terminal,
+	})
+
 	-- WhichKey
+	local disabled_whichkey = functions.is_plugin_disabled("which-key")
 	use({
 		"folke/which-key.nvim",
 		keys = "<space>",
 		config = function()
 			require("modules.configs.whichkey")
 		end,
-		disable = Sv.plugin_disable.whichkey,
+		--	disable = not Sv.plugin_enable.whichkey,
+		disable = disabled_whichkey,
 	})
 
 	-- AutoPairs
@@ -202,37 +257,29 @@ return Packer.startup(function()
 	use({ "andymass/vim-matchup", event = "CursorMoved" })
 
 	-- Commentary
+	local disabled_commentary = functions.is_plugin_disabled("commentary")
 	use({
 		"terrortylor/nvim-comment",
 		cmd = "CommentToggle",
 		config = function()
 			require("nvim_comment").setup()
 		end,
+		disable = disabled_commentary,
 	})
 
 	-- Dashboard
+	local disabled_dashboard = functions.is_plugin_disabled("dashboard")
 	use({
 		"glepnir/dashboard-nvim",
-		-- event = "VimEnter",
 		config = function()
 			require("modules.configs.dashboard")
 		end,
 		cmd = "Dashboard",
-		disable = Sv.plugin_disable.dashboard,
+		-- disable = not Sv.plugin_enable.dashboard,
+		disable = disabled_dashboard,
 	})
 
 	use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
-
-	-- AutoSave
-	use({
-		"Pocco81/AutoSave.nvim",
-		config = function()
-			require("modules.configs.autosave")
-		end,
-		cond = function()
-			return Sv.autosave == true
-		end,
-	})
 
 	-- Smooth Scroll
 	use({
@@ -244,24 +291,28 @@ return Packer.startup(function()
 	})
 
 	-- Zen Mode
+	local disabled_zen = functions.is_plugin_disabled("zen")
 	use({
 		"Pocco81/TrueZen.nvim",
 		cmd = { "TZAtaraxis", "TZMinimalist", "TZFocus" },
 		config = function()
 			require("modules.configs.zenmode")
 		end,
-		disable = Sv.plugin_disable.zenmode,
+		-- 		disable = not Sv.plugin_enable.zenmode,
+		disable = disabled_zen,
 	})
 
 	--   use "alvan/vim-closetag" -- for html autoclosing tag
 
 	-- Indent lines
+	local disabled_indent_lines = functions.is_plugin_disabled("indentlines")
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
 		setup = function()
 			require("modules.configs.blankline")
 		end,
+		disable = disabled_indent_lines,
 	})
 
 	for _, plugin in pairs(Sv.user_plugins) do
