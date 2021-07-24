@@ -39,11 +39,6 @@ M.define_augroups({
 			"<buffer>",
 			"silent! write",
 		},
-		{
-			"CursorHold,CursorHoldI",
-			"*",
-			"lua require'nvim-lightbulb'.update_lightbulb()",
-		},
 	},
 })
 

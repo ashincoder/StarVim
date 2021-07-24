@@ -1,7 +1,7 @@
 vim.g.symbols_outline = {
 	highlight_hovered_item = true,
 	show_guides = true,
-	position = config.doom.explorer_right and "left" or "right",
+	position = "right",
 	keymaps = {
 		close = "<Esc>",
 		goto_location = "<CR>",

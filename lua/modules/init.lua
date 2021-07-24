@@ -64,6 +64,7 @@ return Packer.startup(function()
 	------------------------ Language specific ---------------------------
 
 	-- Completion
+	local disabled_completion = functions.is_plugin_disabled("completion")
 	use({
 		"hrsh7th/nvim-compe",
 		event = "InsertEnter",
@@ -85,6 +86,7 @@ return Packer.startup(function()
 				event = "InsertCharPre",
 			},
 		},
+		disable = disabled_completion,
 	})
 
 	-- Treesitter
@@ -98,25 +100,19 @@ return Packer.startup(function()
 	})
 
 	-- LSP
+	local disabled_lsp = functions.is_plugin_disabled("lsp")
 	use({
 		"kabouzeid/nvim-lspinstall",
 		module = "lspinstall",
 		disable = disabled_lsp,
 	})
 
-	local disabled_lsp = functions.is_plugin_disabled("lsp")
 	use({
 		"neovim/nvim-lspconfig",
 		event = "BufRead",
 		config = function()
 			require("modules.configs.lsp_config")
 		end,
-		disable = disabled_lsp,
-	})
-
-	use({
-		"kosayoda/nvim-lightbulb",
-		module = "nvim-lightbulb",
 		disable = disabled_lsp,
 	})
 
@@ -219,7 +215,51 @@ return Packer.startup(function()
 		cmd = { "LazyGit", "LazyGitConfig" },
 	})
 
-	------------------------ Misc Plugins ---------------------------
+	------------------------ Misc Plugins -------------------------
+
+	local disabled_range_highlight = functions.is_plugin_disabled("range-highlight")
+	use({
+		"winston0410/range-highlight.nvim",
+		requires = {
+			{ "winston0410/cmd-parser.nvim", opt = true, module = "cmd-parser" },
+		},
+		config = function()
+			require("range-highlight").setup()
+		end,
+		disable = disabled_range_highlight,
+		event = "BufRead",
+	})
+
+	-- Write / Read files without permissions (e.vim.g. /etc files) without having
+	-- to use `sudo nvim /path/to/file`
+	local disabled_suda = functions.is_plugin_disabled("suda")
+	use({
+		"lambdalisue/suda.vim",
+		disable = disabled_suda,
+		cmd = { "SudaRead", "SudaWrite" },
+	})
+
+	local disabled_minimap = functions.is_plugin_disabled("minimap")
+	use({
+		"rinx/nvim-minimap",
+		cmd = {
+			"Minimap",
+			"MinimapClose",
+			"MinimapToggle",
+			"MinimapRefresh",
+			"MinimapUpdateHighlight",
+		},
+		disable = disabled_minimap,
+	})
+
+	local disabled_orgmode = functions.is_plugin_disabled("orgmode")
+	use({
+		"kristijanhusak/orgmode.nvim",
+		config = function()
+			require("orgmode").setup()
+		end,
+		disable = disabled_orgmode,
+	})
 
 	-- Terminal
 	local disabled_terminal = functions.is_plugin_disabled("terminal")
@@ -246,12 +286,14 @@ return Packer.startup(function()
 	})
 
 	-- AutoPairs
+	local disabled_autopairs = functions.is_plugin_disabled("autopairs")
 	use({
 		"windwp/nvim-autopairs",
 		after = "nvim-compe",
 		config = function()
 			require("modules.configs.autopairs")
 		end,
+		disable = disabled_autopairs,
 	})
 
 	-- Matching parens
@@ -300,8 +342,6 @@ return Packer.startup(function()
 		end,
 		disable = disabled_zen,
 	})
-
-	--   use "alvan/vim-closetag" -- for html autoclosing tag
 
 	-- Indent lines
 	local disabled_indent_lines = functions.is_plugin_disabled("indentlines")

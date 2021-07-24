@@ -120,6 +120,7 @@ local mappings = {
 	["c"] = {
 		name = "+Code",
 		a = { "<cmd>Telescope lsp_code_actions<cr>", "Code Actions" },
+		s = { "<cmd>SymbolsOutline<cr>", "Toggle Symbols Tree" },
 		d = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declarations" },
 		r = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
 		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Implementation" },
@@ -138,7 +139,6 @@ local mappings = {
 		name = "+Search",
 		g = { "<cmd>Telescope live_grep<cr>", "Grep" },
 		b = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Buffer" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Goto Symbol" },
 		h = { "<cmd>Telescope command_history<cr>", "Command History" },
 		m = { "<cmd>Telescope marks<cr>", "Jump to Mark" },
 	},
