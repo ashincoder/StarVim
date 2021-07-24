@@ -17,7 +17,9 @@ Sv = {
 	smartindent = true,
 
 	termguicolors = true,
+	background = "dark",
 	colorscheme = "stardark",
+	guifont = "JetBrains Mono:11",
 
 	shell = "zsh",
 	cmdheight = 1,
@@ -36,14 +38,9 @@ Sv = {
 	autosave = false,
 	format_on_save = true,
 
-	plugin = {
-		dashboard = {
-			dashboard_enter = 0,
-			statusline_disable = 1,
-		},
-	},
-
-	plugin_disable = {},
+	terminal_width = 70,
+	terminal_height = 20,
+	terminal_direction = "horizontal",
 
 	treesitter = {
 		ensure_installed = "lua",
@@ -259,3 +256,5 @@ Sv = {
 		},
 	},
 }
+
+require("core.config.settings")

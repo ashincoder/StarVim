@@ -25,6 +25,7 @@ bufferline.setup({
 		close_icon = "",
 		left_trunc_marker = "",
 		right_trunc_marker = "",
+		diagnostics = "nvim_lsp",
 		max_name_length = 14,
 		max_prefix_length = 13,
 		tab_size = 20,

@@ -1,4 +1,3 @@
--- This is a example config.
 -- 'Sv' is the global options object
 -- General Settings
 Sv.number = true
@@ -10,30 +9,17 @@ Sv.timeoutlen = 100
 Sv.shell = "zsh"
 
 Sv.undofile = true
+Sv.logging = "info"
 
 Sv.leader_key = " "
-Sv.colorscheme = "stardark" -- The only added colorscheme is stardark and icy.
+Sv.colorscheme = "stardark" -- The only added colorscheme is stardark.
 
-Sv.autosave = false
 Sv.format_on_save = true
+Sv.autosave = true
 
--- Disable or Enable Plugins
-Sv.plugin_disable = {
-	dashboard = false,
-	whichkey = false,
-	zenmode = true,
-	lazygit = true,
-}
-
--- 0 is true
--- 1 is false
--- TODO will add more plugins
-Sv.plugin = {
-	dashboard = {
-		dashboard_enter = 0,
-		statusline_disable = 1,
-	},
-}
+Sv.terminal_direction = "float" -- float, vertical, horizontal
+Sv.terminal_height = nil
+Sv.terminal_width = nil
 
 -- TreeSitter parsers config
 Sv.treesitter.ensure_installed = {
@@ -87,6 +73,7 @@ Sv.treesitter.highlight.enabled = true
 -- Sv.lang.lua.formatter.exe = "stylua"
 
 -- python
+-- Sv.lang.python.linter = 'flake8'
 -- Sv.lang.python.isort = true
 -- Sv.lang.python.diagnostics.virtual_text = true
 -- Sv.lang.python.analysis.use_library_code_types = true
@@ -98,7 +85,8 @@ Sv.treesitter.highlight.enabled = true
 -- to change default formatter from gofmt to goimports
 -- Sv.lang.go.formatter.exe = "goimports"
 
--- javascript formatter is prettier
+-- javascript
+-- Sv.lang.tsserver.linter = nil
 
 -- rust
 -- Sv.lang.rust.formatter = {
@@ -107,14 +95,13 @@ Sv.treesitter.highlight.enabled = true
 -- }
 
 -- Additional Plugins
--- Sv.user_plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---         "ray-x/lsp_signature.nvim",
---         config = function() require"lsp_signature".on_attach() end,
---         event = "InsertEnter"
---     }
--- }
+Sv.user_plugins = {
+	--     {
+	--         "ray-x/lsp_signature.nvim",
+	--         config = function() require"lsp_signature".on_attach() end,
+	--         event = "InsertEnter"
+	--     }
+}
 
 -- Additional Leader bindings for WhichKey
 -- Sv.user_which_key = {

@@ -1,6 +1,6 @@
 -- autoformat
 if Sv.format_on_save then
-	require("core.utils").define_augroups({
+	require("core.autocmds").define_augroups({
 		autoformat = {
 			{
 				"BufWritePost",
