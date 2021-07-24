@@ -59,7 +59,7 @@ Here you go :
 
 ## Lazy loading
 StarVim is lazy loaded so hard that your machine does'nt feel the force of the arrival of StarVim. 
-- Almost 30+ plugins are installed. 6 plugins are loaded in the startup (including packer).
+- Almost 30+ plugins are installed. All of them are lazyloaded.
 
 This was tested in core i3 intel machine with a HDD. Will be fast as a *Star* in your machine 
 ![Lazy](https://github.com/ashincoder/StarVim/blob/screenshots/lazy.png)
@@ -70,6 +70,7 @@ StarVim will have more colorschemes with colorfulness.
 
 ## Extensibility
 StarVim can be configured within 1 file. Which makes everything simple for the user. 
+- You can enable and disable plugins within starrc.lua. You just have to uncomment the **one**
 - While doing a git pull it does'nt affect the user config file. 'sv-config.lua'
 
 + If you still aren't convinced read the [Features](https://github.com/ashincoder/StarVim#features)
@@ -108,6 +109,13 @@ Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tre
 ## Contributions
 - PR's are always welcome , no matter what **So start today** . [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
 - While making a PR, try to be more descriptive. :)
+
+## Questions
+If you have any doubts you can freely ask on these following sites:
+- [Gitter](https://gitter.im/starvim-conf/community)
+- [Reddit](https://www.reddit.com/r/StarVim/)	
+- [Discord](https://discord.com/channels/866158163900366879/866158164335394830)
+- [Youtube](https://www.youtube.com/channel/UCZqKL3vIdyHUiLuR1vYwVgw)
 
 ## Credits
 
