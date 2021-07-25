@@ -117,6 +117,16 @@ return Packer.startup(function()
 	})
 
 	use({
+		"glepnir/lspsaga.nvim",
+		-- config = function()
+		-- 	require("modules.configs.lsp_saga").saga()
+		-- end,
+		cmd = "Lspsaga",
+		module = "lspsaga",
+		disable = disabled_lsp,
+	})
+
+	use({
 		"ray-x/lsp_signature.nvim",
 		event = "InsertEnter",
 		config = function()
@@ -317,19 +327,20 @@ return Packer.startup(function()
 		config = function()
 			require("modules.configs.dashboard")
 		end,
-		cmd = "Dashboard",
 		disable = disabled_dashboard,
 	})
 
-	use({ "tweekmonster/startuptime.vim", cmd = "StartupTime" })
+	use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
 	-- Smooth Scroll
+	local disabled_neoscroll = functions.is_plugin_disabled("neoscroll")
 	use({
 		"karb94/neoscroll.nvim",
 		event = "WinScrolled",
 		config = function()
 			require("neoscroll").setup()
 		end,
+		disable = disabled_neoscroll,
 	})
 
 	-- Zen Mode

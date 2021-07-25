@@ -45,7 +45,10 @@ Sv = {
 	treesitter = {
 		ensure_installed = "lua",
 		ignore_install = { "haskell" },
-		highlight = { enabled = true, use_languagetree = true },
+		highlight = {
+			enabled = true,
+			use_languagetree = true,
+		},
 	},
 
 	user_which_key = {},

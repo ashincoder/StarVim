@@ -1,4 +1,3 @@
--- Lsp Signature
 require("lsp_signature").on_attach({
 	bind = true,
 	doc_lines = 2,

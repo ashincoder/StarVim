@@ -1,4 +1,12 @@
+local log = require("core.logging")
 local term
+
+-- selene: allow(undefined_variable)
+if packer_plugins and packer_plugins["nvim-toggleterm.lua"] then
+	term = require("toggleterm.terminal").Terminal
+else
+	log.error("runner needs toggleterm plugin, please uncomment the 'terminal' entry in your starrc")
+end
 
 local M = {}
 
@@ -13,6 +21,7 @@ local languages = {
 	typescript = "ts-node",
 }
 
+-- start_repl starts a REPL for the current filetype, e.g. a Python file
 -- will open a Python3 REPL
 M.start_repl = function()
 	local filetype = vim.bo.filetype
@@ -23,34 +32,12 @@ M.start_repl = function()
 			local repl = term:new({ cmd = repl_cmd, hidden = true })
 			repl:open()
 		else
-			print("There is no REPL for " .. filetype .. ". Maybe it is not yet supported in the Star runner plugin?")
+			log.error("There is no REPL for " .. filetype .. ". Maybe it is not yet supported in the runner plugin?")
 		end
 	end)
 
 	if not opened_repl then
-		print("Error while trying to opening a repl for " .. filetype .. ". Traceback:\n" .. err)
-	end
-end
-
--- run_code runs the current file
-M.run_code = function()
-	local filetype = vim.bo.filetype
-	local lang_bin = languages[filetype]
-
-	local run_code, err = pcall(function()
-		if lang_bin then
-			require("toggleterm").exec_command('cmd="' .. lang_bin .. ' %"', 1)
-		else
-			print(
-				"There is no available executable for "
-					.. filetype
-					.. ". Maybe it is not yet supported in the Star runner plugin?"
-			)
-		end
-	end)
-
-	if not run_code then
-		print("Error while trying to run the current file. Traceback:\n" .. err)
+		log.error("Error while trying to opening a repl for " .. filetype .. ". Traceback:\n" .. err)
 	end
 end
 

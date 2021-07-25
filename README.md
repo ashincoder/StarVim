@@ -23,8 +23,8 @@
     />
 [![Gitter](https://img.shields.io/gitter/room/ashincoder/StarVim?style=flat-square&logo=gitter&logoColor=white&label=Chat&color=eb34a4)](https://gitter.im/starvim-conf/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Neovim Minimum Version](https://img.shields.io/badge/Neovim-0.5+-blueviolet.svg?style=flat-square&logo=Neovim&logoColor=white)](https://github.com/neovim/neovim)
-[![GitHub Issues](https://img.shields.io/github/issues/ashincoder/StarVim.svg?style=flat-square&label=Issues&color=fc0330)](https://github.com/ashincoder/StarVim/issues)
-[![Last Commit](https://img.shields.io/github/last-commit/ashincoder/StarVim.svg?style=flat-square&label=Last%20Commit&color=58eb34)](https://github.com/ashincoder/StarVim/pulse) 
+[![GitHub Issues](https://img.shields.io/github/issues/ashincoder/StarVim.svg?style=flat-square&label=Issues&color=fc0330)](https://github.com/siduck76/StarVim/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/ashincoder/StarVim.svg?style=flat-square&label=Last%20Commit&color=58eb34)](https://github.com/siduck76/StarVim/pulse) 
 	      
 ![DashBoard](https://github.com/ashincoder/StarVim/blob/screenshots/dashboard.png)
   </div>
@@ -44,12 +44,12 @@ Dependencies :
 
 To keep the config up to date :
 
-```sh
+```
 git pull
 nvim +PackerCompile
 ```
 
-> ! This will not affect your 'sv-config.lua' or 'starrc.lua'. So don't worry.
+> ! This will not affect your 'sv-config.lua'. So don't worry.
 
 # Why StarVim ?
 
@@ -59,7 +59,7 @@ Here you go :
 
 ## Lazy loading
 StarVim is lazy loaded so hard that your machine does'nt feel the force of the arrival of StarVim. 
-- Almost 30+ plugins are installed. All of them are lazyloaded.
+- Almost 30+ plugins are installed. 6 plugins are loaded in the startup (including packer).
 
 This was tested in core i3 intel machine with a HDD. Will be fast as a *Star* in your machine 
 ![Lazy](https://github.com/ashincoder/StarVim/blob/screenshots/lazy.png)
@@ -70,7 +70,6 @@ StarVim will have more colorschemes with colorfulness.
 
 ## Extensibility
 StarVim can be configured within 1 file. Which makes everything simple for the user. 
-- You can enable and disable plugins within starrc.lua. You just have to uncomment the **one**
 - While doing a git pull it does'nt affect the user config file. 'sv-config.lua'
 
 + If you still aren't convinced read the [Features](https://github.com/ashincoder/StarVim#features)
@@ -122,15 +121,14 @@ If you have any doubts you can freely ask on these following sites:
 The following repositories helped me in improving StarVim
 -  ChristianChiarulli's [LunarVim](https://github.com/ChristianChiarulli/LunarVim) 
 -  Siduck's [NvChad](https://github.com/siduck76/NvChad) 
--  NTBBloodbath's [Doom-nvim](https://github.com/NTBBloodbath/doom-nvim)
 
 ## TODO
 
 This project is still a work in progress. But there won't be any breakage.
 
 - [ ] Logo
-- [X] Readme
-- [X] Clean code
+- [ ] Readme
+- [ ] Clean code
 - [ ] More Custom Colorschemes 
 - [ ] Documentation, Wiki and stuff
 
