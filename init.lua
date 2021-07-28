@@ -41,7 +41,7 @@ local async
 async = vim.loop.new_async(vim.schedule_wrap(function()
 	local status_ok, _ = pcall(vim.cmd, "luafile " .. CONFIG_PATH .. "/sv-config.lua")
 	if not status_ok then
-		print("something is wrong with your sv-config")
+		print("Error in sv-config")
 	end
 	local compiled_plugins_path = vim.fn.expand("$HOME/.config/nvim/plugin/packer_compiled.lua")
 	if vim.fn.filereadable(compiled_plugins_path) > 0 then
