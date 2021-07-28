@@ -16,6 +16,7 @@ Lualine is used as statusline
 
 # Telescope
 ![Telescope](https://github.com/ashincoder/StarVim/blob/screenshots/telescope.png)
+![Telescope](https://github.com/ashincoder/StarVim/blob/screenshots/Telescope_mediafiles.png)
 
 # global config
 The config is user-freindly so that the user only has to edit 1 file instead of 10 files
