@@ -3,13 +3,14 @@
 stds.nvim = {
 	globals = {
 		"Sv",
-		vim = { fields = { "g" } },
+		vim = { fields = { "g", "opt" } },
 		"CONFIG_PATH",
 		"CACHE_PATH",
 		"DATA_PATH",
 		"TERMINAL",
 		"USER",
-    os = {fields = {"capture"}}
+		os = { fields = { "capture" } },
+		"Config",
 	},
 	read_globals = {
 		"jit",
@@ -19,7 +20,6 @@ stds.nvim = {
 	},
 }
 std = "lua51+nvim"
-
 
 -- Don't report unused self arguments of methods.
 self = false
