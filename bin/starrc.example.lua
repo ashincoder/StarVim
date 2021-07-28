@@ -10,6 +10,14 @@ local star = {
 	star = {
 		-- 'orgmode',    -- Life Organization Tool
 	},
+<<<<<<< HEAD
+=======
+	colors = {
+		"stardark", -- The shiny theme
+		-- "gruvbox", -- The almighty
+		-- "icy", -- Shiver to death!
+	},
+>>>>>>> dev
 	editor = {
 		"lsp", -- Language Server Protocols
 		"completion", -- The ultimate completion

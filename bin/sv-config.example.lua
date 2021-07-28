@@ -1,9 +1,6 @@
 -- This is a example config.
 -- 'Sv' is the global options object
 -- General Settings
-Sv.number = true
-Sv.relative_number = false
-
 Sv.pumheight = 20
 Sv.timeoutlen = 100
 
@@ -12,11 +9,12 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = " "
--- Sv.colorscheme = ""  -- The only added colorscheme is stardark.
+Sv.colorscheme = "stardark" -- To add more colorschemes uncomment the colors section in starrc.lua
 
 Sv.autosave = false
 Sv.format_on_save = true
 
+<<<<<<< HEAD
 -- Disable or Enable Plugins
 Sv.plugin_disable = {
 	dashboard = false,
@@ -33,10 +31,54 @@ Sv.plugin = {
 		dashboard_enter = 0,
 		statusline_disable = 1,
 	},
+=======
+-- TreeSitter parsers config
+Sv.treesitter.ensure_installed = {
+	"lua",
+	-- "bash",
+	-- "json",
+	-- "python",
+	-- "c",
+	-- "c_sharp",
+	-- "clojure",
+	-- "comment",
+	-- "cpp",
+	-- "commonlisp",
+	-- "cuda",
+	-- "dart",
+	-- "devicetree",
+	-- "dockerfile",
+	-- "elixir",
+	-- "erlang",
+	-- "go",
+	-- "fish",
+	-- "haskell",
+	-- "java",
+	-- "jsdoc",
+	-- "graphql",
+	-- "julia",
+	-- "kotlin",
+	-- "ledger",
+	-- "latex",
+	-- "php",
+	-- "nix",
+	-- "ocamel",
+	-- "ql",
+	-- "regex",
+	-- "ruby",
+	-- "rust",
+	-- "rst",
+	-- "scss",
+	-- "sparql",
+	-- "teal",
+	-- "toml",
+	-- "typescript",
+	-- "vue",
+	-- "yaml",
+	-- "zig"
+>>>>>>> dev
 }
 
--- TreeSitter parsers config
-Sv.treesitter.ensure_installed = { "python", "lua", "bash", "javascript", "html", "css" }
 Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
@@ -44,7 +86,6 @@ Sv.treesitter.highlight.enabled = true
 -- Sv.lang.lua.formatter.exe = "stylua"
 
 -- python
--- Sv.lang.python.linter = 'flake8'
 -- Sv.lang.python.isort = true
 -- Sv.lang.python.diagnostics.virtual_text = true
 -- Sv.lang.python.analysis.use_library_code_types = true
@@ -56,8 +97,7 @@ Sv.treesitter.highlight.enabled = true
 -- to change default formatter from gofmt to goimports
 -- Sv.lang.go.formatter.exe = "goimports"
 
--- javascript
--- Sv.lang.tsserver.linter = nil
+-- javascript formatter is prettier
 
 -- rust
 -- Sv.lang.rust.formatter = {
@@ -67,12 +107,8 @@ Sv.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 -- Sv.user_plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---         "ray-x/lsp_signature.nvim",
---         config = function() require"lsp_signature".on_attach() end,
---         event = "InsertEnter"
---     }
+--     {"ashincoder/gruvbox.nvim"},
+--     {"ashincoder/icy.nvim"},
 -- }
 
 -- Additional Leader bindings for WhichKey

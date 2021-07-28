@@ -6,17 +6,20 @@ USER = vim.fn.expand("$USER")
 
 Sv = {
 	number = true,
-	relativenumber = false,
+	relative_number = false,
 	number_width = 4,
 	spell = false,
 	spelllang = "en",
 
 	shiftwidth = 2,
-	tab_stop = 2,
+	tab_stop = 4,
 	expandtab = true,
 	smartindent = true,
 
+	termguicolors = true,
+	background = "dark",
 	colorscheme = "stardark",
+	guifont = "JetBrains Mono:11",
 
 	shell = "zsh",
 	cmdheight = 1,
@@ -26,6 +29,7 @@ Sv = {
 
 	pumheight = 20,
 	timeoutlen = 200,
+	scrolloff = 5,
 
 	ignorecase = true,
 	hl_search = true,
@@ -34,6 +38,7 @@ Sv = {
 	autosave = false,
 	format_on_save = true,
 
+<<<<<<< HEAD:lua/config.lua
 	plugin = {
 		dashboard = {
 			dashboard_enter = 0,
@@ -42,11 +47,19 @@ Sv = {
 	},
 
 	plugin_disable = {},
+=======
+	terminal_width = 70,
+	terminal_height = 20,
+	terminal_direction = "horizontal",
+>>>>>>> dev:lua/core/config/init.lua
 
 	treesitter = {
-		ensure_installed = "all",
+		ensure_installed = "lua",
 		ignore_install = { "haskell" },
-		highlight = { enabled = true, use_languagetree = true },
+		highlight = {
+			enabled = true,
+			use_languagetree = true,
+		},
 	},
 
 	user_which_key = {},
@@ -157,7 +170,6 @@ Sv = {
 		},
 		python = {
 			-- @usage can be flake8 or yapf
-			linter = "",
 			isort = false,
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
@@ -197,7 +209,6 @@ Sv = {
 				exe = "rustfmt",
 				args = { "--emit=stdout", "--edition=2018" },
 			},
-			linter = "",
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
 				signs = true,
@@ -206,7 +217,6 @@ Sv = {
 		},
 		sh = {
 			-- @usage can be 'shellcheck'
-			linter = "shellcheck",
 			-- @usage can be 'shfmt'
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
@@ -240,7 +250,6 @@ Sv = {
 		terraform = {},
 		tsserver = {
 			-- @usage can be 'eslint' or 'eslint_d'
-			linter = "",
 			diagnostics = {
 				virtual_text = { spacing = 0, prefix = "" },
 				signs = true,
@@ -262,4 +271,4 @@ Sv = {
 	},
 }
 
-require("core.dashboard").config()
+require("core.config.settings")
