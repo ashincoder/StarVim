@@ -2,8 +2,6 @@ require("which-key").setup({
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
 		registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
-		-- No actual key bindings are created
 		spelling = {
 			enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20, -- how many suggestions should be shown in the list?
@@ -16,8 +14,6 @@ require("which-key").setup({
 			nav = true, -- misc bindings to work with windows
 		},
 	},
-	-- add operators that will trigger motion and text object completion
-	-- to enable all native operators, set the preset / operators plugin above
 	operators = {
 		d = "Delete",
 		c = "Change",
@@ -28,13 +24,12 @@ require("which-key").setup({
 		[">"] = "Indent right",
 		["<lt>"] = "Indent left",
 		["zf"] = "Create fold",
-		["!"] = "Filter though external program",
-		-- ['v'] = 'Visual Character Mode',
+		["v"] = "Visual Character Mode",
 		gc = "Comments",
 	},
 	icons = {
 		breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-		separator = "➜", -- symbol used between a key and it's label
+		separator = "➜ ", -- symbol used between a key and it's label
 		group = "+", -- symbol prepended to a group
 	},
 	window = {
@@ -146,42 +141,36 @@ local mappings = {
 	},
 	f = {
 		name = "+Files",
-		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		c = { "<cmd>lua require('core.functions').search_dotfiles()<cr>", "Nvim Config" },
-		o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		d = { ":Telescope file_browser<cr>", "Browse Files" },
-		s = { "<cmd>Telescope live_grep<cr>", "Search Word" },
-		b = { "<cmd>Telescope marks<cr>", "Search Word" },
-		m = { "<cmd>Format<cr>", "Format File" },
-		n = { "<cmd>enew<cr>", "New File" },
+		f = { "Find Files" },
+		c = { "Nvim Config Files" },
+		o = { "Open Recent Files" },
+		n = { "New File" },
+		m = { "Media Files" },
+		t = { "Format File" },
+		r = { "Format File" },
+		b = { "Telescope Browse Files" },
 	},
-	[":"] = { "<cmd>Telescope command_history<cr>", "Command History" },
+	[":"] = { "Command History" },
 	q = {
 		name = "+Quit/Session",
-		q = { "<cmd>:qa<cr>", "Quit" },
-		["!"] = { "<cmd>:qa!<cr>", "Quit without saving" },
-		s = { "<cmd>SessionSave<cr>", "Save Session" },
-		l = { "<cmd>SessionLoad<cr>", "Session Load" },
-	},
-	x = {
-		name = "+errors",
-		l = { "<cmd>lopen<cr>", "Open Location List" },
-		q = { "<cmd>copen<cr>", "Open Quickfix List" },
+		["!"] = { "Quit without saving" },
+		q = { "Save Quit" },
+		s = { "Save Session" },
+		l = { "Session Load" },
 	},
 	t = {
 		name = "+Terminal",
-		t = { "<cmd> ToggleTerm <cr>", "Open Terminal" },
-		v = { "<cmd> 10new +terminal | setlocal nobuflisted <cr>", "Vert Split Terminal" },
-		s = { "<cmd> vnew +terminal | setlocal nobuflisted <cr>", "Vert Split Terminal" },
+		t = { "Open Terminal" },
+		v = { "Vert Split Terminal" },
+		s = { "Vert Split Terminal" },
 	},
 	z = {
 		name = "+Zen",
-		z = { "<cmd>TZAtaraxis<cr>", "Atraxis Mode" },
-		m = { "<cmd>TZMinimalist<cr>", "Minimalist Mode" },
-		f = { "<cmd>TZFocus<cr>", "Focus Mode" },
+		z = { "Atraxis Mode" },
+		m = { "Minimalist Mode" },
+		f = { "Focus Mode" },
 	},
-
-	e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
+	e = { "Nvim Tree" },
 }
 
 for i = 0, 10 do

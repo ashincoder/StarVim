@@ -27,12 +27,6 @@ utils.map("n", "<C-a>", "<Cmd>%y+<CR>", opts)
 -- Save with Ctrl-s
 utils.map("n", "<C-s>", "<cmd>w <CR>", opts)
 
--- Esc with jh
-utils.map("", "j", 'v:count ? "j" : "gj"', { expr = true })
-utils.map("", "k", 'v:count ? "k" : "gk"', { expr = true })
-utils.map("", "<Down>", 'v:count ? "j" : "gj"', { expr = true })
-utils.map("", "<Up>", 'v:count ? "k" : "gk"', { expr = true })
-
 -- better indenting
 utils.map("v", "<", "<gv", opts)
 utils.map("v", ">", ">gv", opts)
@@ -114,6 +108,8 @@ utils.map("n", "<leader>cF", "<cmd>Format<CR>", opts) -- Format buffer
 
 utils.map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 utils.map("n", "<leader>cl", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts) -- error list
+utils.map("n", "<C-n>", "<cmd>lnext<CR>", opts) -- error navigation list
+utils.map("n", "<C-p>", "<cmd>lprev<CR>", opts) -- error navigation list
 utils.map("n", "<leader>cgD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- jump to definition
 utils.map("n", "<leader>cgr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) -- go to reference
 utils.map("n", "<leader>cgi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- buf implementation
@@ -135,3 +131,32 @@ utils.map("n", "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opt
 utils.map("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", opts)
 utils.map("n", "<leader>sh", "<cmd>Telescope command_history<CR>", opts)
 utils.map("n", "<leader>sm", "<cmd>Telescope marks<CR>", opts)
+
+-- Files
+utils.map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+utils.map("n", "<leader>fm", "<cmd>Telescope media_files<CR>", opts)
+utils.map("n", "<leader>fc", "<cmd>lua require('core.functions').search_dotfiles()<cr>", opts)
+utils.map("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", opts)
+utils.map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", opts)
+utils.map("n", "<leader>fn", "<cmd>enew<CR>", opts)
+utils.map("n", "<leader>ft", "<cmd>Format<CR>", opts)
+utils.map("n", "<leader>:", "<cmd>Telescope command_history<CR>", opts)
+
+-- Sessions
+utils.map("n", "<leader>qq", "<cmd>wqa<CR>", opts)
+utils.map("n", "<leader>q!", "<cmd>qa!<CR>", opts)
+utils.map("n", "<leader>qs", "<cmd>SessionSave<CR>", opts)
+utils.map("n", "<leader>ql", "<cmd>SessionLoad<CR>", opts)
+
+-- Terminal
+utils.map("n", "<leader>tt", "<cmd>ToggleTerm<CR>", opts)
+utils.map("n", "<leader>ts", "<cmd>10new +terminal | setlocal nobuflisted <CR>", opts)
+utils.map("n", "<leader>tv", "<cmd>vnew +terminal | setlocal nobuflisted<CR>", opts)
+
+-- Nvim Tree
+utils.map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+
+-- Zen Mode
+utils.map("n", "<leader>zz", "<cmd>TZAtaraxis<CR>", opts)
+utils.map("n", "<leader>zm", "<cmd>TZMinimalist<CR>", opts)
+utils.map("n", "<leader>zf", "<cmd>TZFocus<CR>", opts)
