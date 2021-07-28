@@ -292,6 +292,14 @@ return packer.startup(function()
 		disable = disabled_orgmode,
 	})
 
+	use({
+		"akinsho/org-bullets.nvim",
+		config = function()
+			require("org-bullets").setup()
+		end,
+		disable = disabled_orgmode,
+	})
+
 	-- Terminal
 	local disabled_terminal = functions.is_plugin_disabled("terminal")
 	use({
