@@ -16,20 +16,16 @@ cloneconfig() {
 	echo "Cloning StarVim configuration"
 	git clone --branch main https://github.com/ashincoder/StarVim.git ~/.config/nvim
 	cp "$HOME"/.config/nvim/bin/sv-config.example.lua "$HOME"/.config/nvim/sv-config.lua
-<<<<<<< HEAD
 	cp "$HOME"/.config/nvim/bin/starrc.lua "$HOME"/.config/nvim/sv-config.lua
-	nvim +":lua require 'plugins' vim.cmd('PackerInstall')"
-	nvim +":lua require 'plugins' vim.cmd('PackerCompile')"
+	nvim +PackerInstall
+	nvim +PackerCompile
 
 	echo -e "\nCompile Complete"
-	# nvim --headless -cq ':silent TSUpdate' -cq ':qall' >/dev/null 2>&1
-=======
 	cp "$HOME"/.config/nvim/bin/starrc.lua "$HOME"/.config/nvim/starrc.lua
 	nvim +PackerInstall
 	nvim +PackerCompile
 
 	echo -e "\nCompile Complete"
->>>>>>> dev
 }
 
 # Welcome
