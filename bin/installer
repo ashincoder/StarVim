@@ -19,8 +19,8 @@ cloneconfig() {
 	cp "$HOME"/.config/nvim/bin/starplug.example.lua "$HOME"/.config/nvim/starplug.lua
 	cd "$HOME"/.config/nvim/
 
-	nvim +":lua require 'modules' vim.cmd('PackerInstall')"
-	nvim +":lua require 'modules' vim.cmd('PackerCompile')"
+	nvim +PackerInstall
+	nvim +PackerCompile
 
 	echo -e "\nCompile Complete"
 }
