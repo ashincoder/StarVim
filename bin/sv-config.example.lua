@@ -1,9 +1,6 @@
 -- This is a example config.
 -- 'Sv' is the global options object
 -- General Settings
-Sv.number = true
-Sv.relative_number = false
-
 Sv.pumheight = 20
 Sv.timeoutlen = 100
 
@@ -12,18 +9,10 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = " "
-Sv.colorscheme = "stardark" -- The only added colorscheme is stardark and icy.
+Sv.colorscheme = "stardark" -- To add more colorschemes uncomment the colors section in starrc.lua
 
 Sv.autosave = false
 Sv.format_on_save = true
-
--- Disable or Enable Plugins
-Sv.plugin_disable = {
-	dashboard = false,
-	whichkey = false,
-	zenmode = true,
-	lazygit = true,
-}
 
 -- 0 is true
 -- 1 is false
