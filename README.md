@@ -105,9 +105,9 @@ StarVim can be configured within 1 file. Which makes everything simple for the u
 ![DashBoard](https://github.com/ashincoder/StarVim/blob/screenshots/dashboard.png)
 Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tree/screenshots)
 
-## Contributions
-- PR's are always welcome , no matter what **So start today** . [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
-- While making a PR, try to be more descriptive. :)
+## Error Handling
+Check star.log located in `~/.local/share/nvim/star.log` for any errors
+More will be added in the wiki
 
 ## Questions
 If you have any doubts you can freely ask on these following sites:
@@ -115,6 +115,11 @@ If you have any doubts you can freely ask on these following sites:
 - [Reddit](https://www.reddit.com/r/StarVim/)	
 - [Discord](https://discord.com/channels/866158163900366879/866158164335394830)
 - [Youtube](https://www.youtube.com/channel/UCZqKL3vIdyHUiLuR1vYwVgw)
+
+## Contributions
+- PR's are always welcome , no matter what **So start today** . [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+- While making a PR, try to be more descriptive. :)
+
 
 ## Credits
 
