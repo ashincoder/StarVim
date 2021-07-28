@@ -1,0 +1,6 @@
+require("core.config")
+require("core.config.settings")
+require("modules")
+require("core.keybindings")
+require("core.autocmds")
+require("core.functions")
