@@ -5,14 +5,14 @@ vim.cmd([[packadd packer.nvim]])
 local present, _ = pcall(require, "modules.configs.packer")
 
 if present then
-	Packer = require("packer")
+	packer = require("packer")
 else
 	return false
 end
 
-local use = Packer.use
+local use = packer.use
 
-return Packer.startup(function()
+return packer.startup(function()
 	use({ "wbthomason/packer.nvim", event = "VimEnter" })
 
 	------------------------ UI ---------------------------
@@ -396,6 +396,6 @@ return Packer.startup(function()
 	})
 
 	for _, plugin in pairs(Sv.user_plugins) do
-		Packer.use(plugin)
+		packer.use(plugin)
 	end
 end)
