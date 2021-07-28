@@ -3,7 +3,7 @@ local log = require("core.logging")
 
 local M = {}
 
-log.debug("Loading Doom starrc module ...")
+log.debug("Loading starplug module ...")
 
 -- default_starrc_values loads the default starrc values
 -- @return table
@@ -52,17 +52,17 @@ M.load_starrc = function()
 	local config
 
 	-- /home/user/.config/doom-nvim/starrc
-	if vim.fn.filereadable(utils.star_root .. "/starrc.lua") == 1 then
+	if vim.fn.filereadable(utils.star_root .. "/starplug.lua") == 1 then
 		local loaded_starrc, err = pcall(function()
-			log.debug("Loading the starrc file ...")
-			config = dofile(utils.star_root .. "/starrc.lua")
+			log.debug("Loading the starplug file ...")
+			config = dofile(utils.star_root .. "/starplug.lua")
 		end)
 
 		if not loaded_starrc then
-			log.debug("Error while loading the starrc. Traceback:\n" .. err)
+			log.debug("Error while loading the starplug. Traceback:\n" .. err)
 		end
 	else
-		log.debug("No starrc.lua file found, falling to defaults")
+		log.debug("No starplug.lua file found, falling to defaults")
 		config = default_starrc_values()
 	end
 

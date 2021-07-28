@@ -5,7 +5,7 @@ local term
 if packer_plugins and packer_plugins["nvim-toggleterm.lua"] then
 	term = require("toggleterm.terminal").Terminal
 else
-	log.error("runner needs toggleterm plugin, please uncomment the 'terminal' entry in your starrc")
+	log.error("runner needs toggleterm plugin, please uncomment the 'terminal' entry in your starplug")
 end
 
 local M = {}
