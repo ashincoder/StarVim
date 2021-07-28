@@ -28,8 +28,10 @@ utils.map("n", "<C-a>", "<Cmd>%y+<CR>", opts)
 utils.map("n", "<C-s>", "<cmd>w <CR>", opts)
 
 -- Esc with jh
-utils.map("i", "jk", "<esc>", {})
-utils.map("v", "jk", "<esc>", {})
+utils.map("", "j", 'v:count ? "j" : "gj"', { expr = true })
+utils.map("", "k", 'v:count ? "k" : "gk"', { expr = true })
+utils.map("", "<Down>", 'v:count ? "j" : "gj"', { expr = true })
+utils.map("", "<Up>", 'v:count ? "k" : "gk"', { expr = true })
 
 -- better indenting
 utils.map("v", "<", "<gv", opts)
@@ -42,15 +44,15 @@ utils.map("n", "<Esc>", "<cmd>noh<CR>", opts)
 utils.map("t", "<Esc>", "<C-\\><C-n>", opts)
 
 -- Move selected line / block of text in visual mode
-utils.map("x", "K", "<cmd>move '<-2<CR>gv-gv", opts)
-utils.map("x", "J", "<cmd>move '>+1<CR>gv-gv", opts)
+utils.map("x", "K", ":move '<-2<CR>gv-gv", opts)
+utils.map("x", "J", ":move '>+1<CR>gv-gv", opts)
 
 -- Don't copy the replaced text after pasting in visual mode
 utils.map("v", "p", '"_dP', opts)
 
 -- Commentary
-utils.map("n", "<leader>/", "<cmd>CommentToggle<CR>", opts)
-utils.map("v", "<leader>/", "<cmd>CommentToggle<CR>", opts)
+utils.map("n", "<leader>/", ":CommentToggle<CR>", opts)
+utils.map("v", "<leader>/", ":CommentToggle<CR>", opts)
 
 -- better window movement
 utils.map("n", "<C-h>", "<C-w>h", opts)
@@ -71,9 +73,9 @@ utils.map("n", "<leader>wk", "<cmd>resize +5<CR>", opts) -- Expand Split below
 -- Buffers or Tabs
 utils.map("n", "<leader>bn", "<cmd>enew<CR>", opts) -- New tab
 utils.map("n", "<leader>bd", "<cmd>bd!<CR>", opts) -- Close tab
+utils.map("n", "<leader>bp", "<cmd>BufferLinePick<CR>", opts) -- Pick a buffer or tab
 utils.map("n", "<TAB>", "<cmd>BufferLineCycleNext<CR>", opts) -- Next Tab
 utils.map("n", "<S-TAB>", "<cmd>BufferLineCyclePrev<CR>", opts) -- Prev Tab
-utils.map("n", "<leader>bp", "<cmd>BufferLinePick<CR>", opts) -- Pick a buffer or tab
 
 -- Git
 utils.map("n", "<leader>gg", "<cmd>LazyGit<CR>", opts) -- Open LazyGit
