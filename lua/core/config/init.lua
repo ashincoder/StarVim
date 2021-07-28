@@ -38,20 +38,9 @@ Sv = {
 	autosave = false,
 	format_on_save = true,
 
-<<<<<<< HEAD:lua/config.lua
-	plugin = {
-		dashboard = {
-			dashboard_enter = 0,
-			statusline_disable = 1,
-		},
-	},
-
-	plugin_disable = {},
-=======
 	terminal_width = 70,
 	terminal_height = 20,
 	terminal_direction = "horizontal",
->>>>>>> dev:lua/core/config/init.lua
 
 	treesitter = {
 		ensure_installed = "lua",
