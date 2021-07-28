@@ -6,10 +6,14 @@ local star = {
 		"which-key", -- Keybindings popup menu like Emacs' guide-key
 		-- 'zen',         -- Distraction free environment
 		-- 'indentlines', -- Show indent lines
-		-- 'doom-themes', -- Additional doom emacs' colorschemes
 	},
 	star = {
 		-- 'orgmode',    -- Life Organization Tool
+	},
+	colors = {
+		"stardark", -- The shiny theme
+		-- "gruvbox", -- The almighty
+		-- "icy", -- Shiver to death!
 	},
 	editor = {
 		"lsp", -- Language Server Protocols
