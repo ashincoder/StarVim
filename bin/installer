@@ -21,11 +21,6 @@ cloneconfig() {
 	nvim +PackerCompile
 
 	echo -e "\nCompile Complete"
-	cp "$HOME"/.config/nvim/bin/starrc.lua "$HOME"/.config/nvim/starrc.lua
-	nvim +PackerInstall
-	nvim +PackerCompile
-
-	echo -e "\nCompile Complete"
 }
 
 # Welcome
