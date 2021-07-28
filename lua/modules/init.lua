@@ -40,10 +40,18 @@ return Packer.startup(function()
 	})
 
 	-- Colors -- TODO add more colors
+	local disabled_stardark = functions.is_plugin_disabled("stardark")
+	use({ "ashincoder/stardark", disable = disabled_stardark })
+
+	local disabled_gruvbox = functions.is_plugin_disabled("gruvbox")
+	use({ "ashincoder/gruvbox.nvim", disable = disabled_gruvbox })
+
+	local disabled_icy = functions.is_plugin_disabled("icy")
+	use({ "ashincoder/icy.nvim", disable = disabled_icy })
+
 	use({
 		"rktjmp/lush.nvim",
 		event = "VimEnter",
-		requires = { "ashincoder/stardark" },
 		config = function()
 			require("lush")(require(Sv.colorscheme))
 		end,
@@ -217,6 +225,19 @@ return Packer.startup(function()
 		disable = disabled_telescope,
 	})
 
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "make",
+		cmd = "Telescope",
+		disable = disabled_telescope,
+	})
+
+	use({
+		"nvim-telescope/telescope-media-files.nvim",
+		cmd = "Telescope",
+		disable = disabled_telescope,
+	})
+
 	-- Git stuff
 	local disabled_lazygit = functions.is_plugin_disabled("lazygit")
 	use({
@@ -328,6 +349,15 @@ return Packer.startup(function()
 			require("modules.configs.dashboard")
 		end,
 		disable = disabled_dashboard,
+	})
+
+	use({
+		"jdhao/better-escape.vim",
+		event = "InsertEnter",
+		config = function()
+			vim.g.better_escape_interval = 300
+			vim.g.better_escape_shortcut = { "jk" }
+		end,
 	})
 
 	use({ "dstein64/vim-startuptime", cmd = "StartupTime" })

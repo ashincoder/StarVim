@@ -112,12 +112,12 @@ local mappings = {
 	},
 	c = {
 		name = "+Code",
+		i = { "Repl" },
 		r = { "Rename Function" },
 		a = { "Code Actions" },
 		f = { "Find Reference" },
 		s = { "Toggle Symbols Tree" },
 		d = { "Declarations" },
-		i = { "Implementation" },
 		n = { "Diagnostic next" },
 		p = { "Diagnostic prev" },
 		l = { "Error List" },
