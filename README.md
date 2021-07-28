@@ -19,7 +19,7 @@ Lualine is used as statusline
 ![Telescope](https://github.com/ashincoder/StarVim/blob/screenshots/Telscope_mediafiles.png)
 
 # global config
-The config is user-freindly so that the user only has to edit 1 file instead of 10 files
+The config is user-freindly so that the user only has to edit 1 file for custom settings and 1 file to install builtin plugins instead of 10 files
 ![global-config](https://github.com/ashincoder/StarVim/blob/screenshots/global-config.png)
 
 # Treesitter Parser
