@@ -12,7 +12,7 @@ Sv = {
 	spelllang = "en",
 
 	shiftwidth = 2,
-	tab_stop = 2,
+	tab_stop = 4,
 	expandtab = true,
 	smartindent = true,
 

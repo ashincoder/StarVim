@@ -39,7 +39,6 @@ M.define_augroups({
 			"setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 		},
 		{ "BufWritePost", "sv-config.lua", "lua require('core.functions').reload_config()" },
-		-- { "VimLeavePre", "*", "set title set titleold=" },
 		{
 			"TextChanged,InsertLeave",
 			"<buffer>",
@@ -47,8 +46,5 @@ M.define_augroups({
 		},
 	},
 })
-
--- file extension specific tabbing
-vim.cmd([[autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
 
 return M
