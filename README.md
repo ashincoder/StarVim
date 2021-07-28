@@ -132,8 +132,9 @@ The following repositories helped me in improving StarVim
 This project is still a work in progress. But there won't be any breakage.
 
 - [ ] Logo
-- [ ] Readme
-- [ ] Clean code
-- [ ] More Custom Colorschemes 
+- [X] Readme
+- [X] Clean code
+- [X] More Custom Colorschemes 
+- [X] Easily Installable plugins 
 - [ ] Documentation, Wiki and stuff
 
