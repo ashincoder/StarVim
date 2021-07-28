@@ -49,7 +49,7 @@ local default_config = {
 -- {{{ NO NEED TO CHANGE
 local log = {}
 
--- selene: allow(incorrect_standard_library_use)
+-- luacheck: ignore
 local unpack = unpack or table.unpack
 
 log.new = function(config, standalone)
@@ -57,6 +57,7 @@ log.new = function(config, standalone)
 
 	local outfile = string.format("%s/%s.log", vim.api.nvim_call_function("stdpath", { "data" }), config.plugin)
 
+	-- luacheck: ignore
 	local obj
 	if standalone then
 		obj = log
