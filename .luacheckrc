@@ -11,6 +11,8 @@ stds.nvim = {
 		"USER",
 		os = { fields = { "capture" } },
 		"Config",
+		"packer",
+		"packer_plugins",
 	},
 	read_globals = {
 		"jit",
