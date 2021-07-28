@@ -14,16 +14,6 @@ Sv.colorscheme = "stardark" -- To add more colorschemes uncomment the colors sec
 Sv.autosave = false
 Sv.format_on_save = true
 
--- 0 is true
--- 1 is false
--- TODO will add more plugins
-Sv.plugin = {
-	dashboard = {
-		dashboard_enter = 0,
-		statusline_disable = 1,
-	},
-}
-
 -- TreeSitter parsers config
 Sv.treesitter.ensure_installed = {
 	"lua",
@@ -69,6 +59,7 @@ Sv.treesitter.ensure_installed = {
 	-- "yaml",
 	-- "zig"
 }
+
 Sv.treesitter.ignore_install = { "haskell" }
 Sv.treesitter.highlight.enabled = true
 
