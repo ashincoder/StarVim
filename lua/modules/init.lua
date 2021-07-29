@@ -82,6 +82,10 @@ return packer.startup(function()
 		wants = { "LuaSnip" },
 		requires = {
 			{
+				"tamago324/compe-zsh",
+				after = "nvim-compe",
+			},
+			{
 				"L3MON4D3/LuaSnip",
 				wants = "friendly-snippets",
 				event = "InsertCharPre",

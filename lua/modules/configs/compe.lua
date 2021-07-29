@@ -19,6 +19,7 @@ compe.setup({
 	max_menu_width = 100,
 	documentation = true,
 	source = {
+		zsh = true,
 		orgmode = true,
 		nvim_lsp = true,
 		nvim_lua = true,
