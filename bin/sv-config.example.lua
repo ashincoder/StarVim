@@ -1,8 +1,6 @@
 -- This is a example config.
 -- 'Sv' is the global options object
 -- General Settings
-Sv.number = true
-
 Sv.pumheight = 20
 Sv.timeoutlen = 100
 
@@ -11,9 +9,8 @@ Sv.shell = "zsh"
 Sv.undofile = true
 
 Sv.leader_key = "space"
-Sv.colorscheme = "stardark" -- The only added colorscheme is stardark and icy.
+Sv.colorscheme = "stardark"
 
-Sv.autosave = false
 Sv.format_on_save = true
 
 -- TreeSitter parsers config
@@ -89,8 +86,7 @@ Sv.treesitter.highlight.enabled = true
 
 -- Additional Plugins
 -- Sv.user_plugins = {
---     {"ashincoder/gruvbox.nvim"},
---     {"ashincoder/icy.nvim"},
+--     {"kyazdani42/blue-moon"},
 -- }
 
 -- Additional Leader bindings for WhichKey
