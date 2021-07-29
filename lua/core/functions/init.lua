@@ -5,6 +5,7 @@ local M = {}
 function M.reload_config()
 	vim.cmd("source ~/.config/nvim/lua/core/config/init.lua")
 	vim.cmd("source ~/.config/nvim/sv-config.lua")
+	vim.cmd("source ~/.config/nvim/starplug.lua")
 	vim.cmd("source ~/.config/nvim/lua/modules/init.lua")
 	vim.cmd(":PackerInstall")
 	vim.cmd(":PackerCompile")
