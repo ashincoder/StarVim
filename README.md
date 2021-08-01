@@ -70,8 +70,6 @@ StarVim will have more colorschemes with colorfulness.
 
 ## Extensibility
 StarVim can be configured within 1 file. Which makes everything simple for the user. 
-=======
->>>>>>> dev
 - While doing a git pull it does'nt affect the user config file. 'sv-config.lua'
 
 + If you still aren't convinced read the [Features](https://github.com/ashincoder/StarVim#features)
@@ -114,7 +112,6 @@ Other screenshots are displayed [here](https://github.com/ashincoder/StarVim/tre
 ## Error Handling
 Check star.log located in `~/.local/share/nvim/star.log` for any errors
 More will be added in the wiki
->>>>>>> dev
 
 ## Questions
 If you have any doubts you can freely ask on these following sites:
@@ -135,12 +132,9 @@ The following repositories helped me in improving StarVim
 
 ## TODO
 
-This project is still a work in progress. But there won't be any breakage.
-
 - [ ] Logo
 - [X] Readme
 - [X] Clean code
 - [X] More Custom Colorschemes 
 - [X] Easily Installable plugins 
 - [ ] Documentation, Wiki and stuff
-
