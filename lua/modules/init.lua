@@ -372,8 +372,6 @@ return packer.startup(function()
 		end,
 	})
 
-	use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
-
 	-- Smooth Scroll
 	local disabled_neoscroll = functions.is_plugin_disabled("neoscroll")
 	use({
