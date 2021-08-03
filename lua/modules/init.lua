@@ -43,6 +43,9 @@ return packer.startup(function()
 	local disabled_stardark = functions.is_plugin_disabled("stardark")
 	use({ "ashincoder/stardark", disable = disabled_stardark })
 
+	local disabled_neon = functions.is_plugin_disabled("neon")
+	use({ "ashincoder/neon", disable = disabled_neon })
+
 	local disabled_gruvbox = functions.is_plugin_disabled("gruvbox")
 	use({ "ashincoder/gruvbox.nvim", disable = disabled_gruvbox })
 
