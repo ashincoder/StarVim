@@ -130,9 +130,6 @@ return packer.startup(function()
 
 	use({
 		"glepnir/lspsaga.nvim",
-		-- config = function()
-		-- 	require("modules.configs.lsp_saga").saga()
-		-- end,
 		cmd = "Lspsaga",
 		module = "lspsaga",
 		disable = disabled_lsp,
@@ -145,6 +142,13 @@ return packer.startup(function()
 			require("modules.configs.lsp_sign")
 		end,
 		disable = disabled_lsp,
+	})
+
+	local disabled_runner = functions.is_plugin_disabled("runner")
+	use({
+		"michaelb/sniprun",
+		run = "bash install.sh",
+		disable = disabled_runner,
 	})
 
 	-- Viewer & finder for LSP symbols and tags

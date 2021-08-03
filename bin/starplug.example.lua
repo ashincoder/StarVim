@@ -9,6 +9,7 @@ local star = {
 	},
 	star = {
 		-- 'orgmode',    -- Life Organization Tool
+		-- 'runner',    -- Code runner for your language
 	},
 	colors = {
 		"stardark", -- The shiny theme
