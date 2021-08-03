@@ -149,6 +149,13 @@ return packer.startup(function()
 		"michaelb/sniprun",
 		run = "bash install.sh",
 		disable = disabled_runner,
+		cmd = {
+			"SnipRun",
+			"SnipClose",
+			"SnipTerminate",
+			"SnipReset",
+			"SnipReplMemoryClean",
+		},
 	})
 
 	-- Viewer & finder for LSP symbols and tags
