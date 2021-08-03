@@ -131,7 +131,7 @@ The following repositories helped me in improving StarVim
 
 - [ ] Logo
 - [X] Readme
-- [X] Clean code
+- [X] Clean code [![CodeFactor](https://www.codefactor.io/repository/github/ashincoder/starvim/badge)](https://www.codefactor.io/repository/github/ashincoder/starvim)
 - [X] More Custom Colorschemes 
 - [X] Easily Installable plugins 
 - [ ] Documentation, Wiki and stuff
