@@ -15,6 +15,7 @@ local star = {
 		"stardark", -- The shiny theme
 		-- "gruvbox", -- The almighty
 		-- "icy", -- Shiver to death!
+		-- "neon", -- Welcome to the light
 	},
 	editor = {
 		"lsp", -- Language Server Protocols
