@@ -147,6 +147,17 @@ return packer.startup(function()
 		disable = disabled_lsp,
 	})
 
+	-- Linter
+	local disabled_lint = functions.is_plugin_disabled("lint")
+	use({
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("modules.configs.linter")
+		end,
+		-- module = "lint",
+		disable = disabled_lint,
+	})
+
 	local disabled_runner = functions.is_plugin_disabled("runner")
 	use({
 		"michaelb/sniprun",

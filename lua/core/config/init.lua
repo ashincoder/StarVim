@@ -35,8 +35,8 @@ Sv = {
 	hl_search = true,
 
 	leader_key = " ",
-	autosave = false,
 	format_on_save = true,
+	lint_on_save = true,
 
 	terminal_width = 70,
 	terminal_height = 20,

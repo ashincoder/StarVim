@@ -54,6 +54,18 @@ M.define_augroups({
 			"silent! write",
 		},
 	},
+	-- _autolint = {
+	-- 	{
+	-- 		"BufWritePost",
+	-- 		"<buffer>",
+	-- 		":silent lua require('lint').try_lint()",
+	-- 	},
+	-- 	{
+	-- 		"BufEnter",
+	-- 		"<buffer>",
+	-- 		":silent lua require('lint').try_lint()",
+	-- 	},
+	-- },
 })
 
 return M
