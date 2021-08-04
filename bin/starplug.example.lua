@@ -19,6 +19,7 @@ local star = {
 	},
 	editor = {
 		"lsp", -- Language Server Protocols
+		"lint", -- A beauty teacher for your language
 		"completion", -- The ultimate completion
 		"nvim-tree", -- Tree explorer
 		"symbols", -- LSP symbols and tags
