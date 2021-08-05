@@ -372,6 +372,7 @@ return packer.startup(function()
 		config = function()
 			require("modules.configs.dashboard")
 		end,
+		event = "BufWinEnter",
 		disable = disabled_dashboard,
 	})
 

@@ -131,6 +131,7 @@ utils.map("n", "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opt
 utils.map("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", opts)
 utils.map("n", "<leader>sh", "<cmd>Telescope command_history<CR>", opts)
 utils.map("n", "<leader>sm", "<cmd>Telescope marks<CR>", opts)
+utils.map("n", "<leader>sc", "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>")
 
 -- Files
 utils.map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
