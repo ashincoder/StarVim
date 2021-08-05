@@ -254,12 +254,6 @@ return packer.startup(function()
 		disable = disabled_telescope,
 	})
 
-	use({
-		"nvim-telescope/telescope-media-files.nvim",
-		cmd = "Telescope",
-		disable = disabled_telescope,
-	})
-
 	-- Git stuff
 	local disabled_lazygit = functions.is_plugin_disabled("lazygit")
 	use({

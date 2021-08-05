@@ -54,9 +54,5 @@ telescope.setup({
 			override_generic_sorter = false,
 			override_file_sorter = true,
 		},
-		media_files = {
-			filetypes = { "png", "webp", "jpg", "jpeg" },
-			find_cmd = "rg", -- find command (defaults to `fd`)
-		},
 	},
 })
