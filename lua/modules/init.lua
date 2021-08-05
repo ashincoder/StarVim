@@ -213,7 +213,7 @@ return packer.startup(function()
 	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
 	use({
 		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
+		module = "gitsigns",
 		config = function()
 			require("modules.configs.gitsigns")
 		end,
