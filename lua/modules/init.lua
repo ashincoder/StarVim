@@ -255,13 +255,6 @@ return packer.startup(function()
 	})
 
 	use({
-		"nvim-telescope/telescope-fzf-native.nvim",
-		run = "make",
-		cmd = "Telescope",
-		disable = disabled_telescope,
-	})
-
-	use({
 		"nvim-telescope/telescope-media-files.nvim",
 		cmd = "Telescope",
 		disable = disabled_telescope,
