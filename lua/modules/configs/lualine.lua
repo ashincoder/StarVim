@@ -1,8 +1,8 @@
 require("lualine").setup({
 	options = {
-		-- ... your lualine config
 		theme = Sv.colorscheme,
-		-- ... your lualine config
+		-- section_separators = { "", "" },
+		component_separators = { "", "" },
 	},
 	sections = {
 		lualine_a = { "mode" },

@@ -138,6 +138,7 @@ local mappings = {
 		b = { "Search in Buffer" },
 		h = { "Command History" },
 		m = { "Jump to Marks" },
+		c = { "Colorschemes with previwer" },
 	},
 	f = {
 		name = "+Files",

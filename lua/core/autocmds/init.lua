@@ -38,11 +38,32 @@ M.define_augroups({
 			"*",
 			"setlocal formatoptions-=c formatoptions-=r formatoptions-=o",
 		},
-		{ "BufWritePost", "sv-config.lua", "lua require('core.functions').reload_config()" },
+		{
+			"BufWritePost",
+			"sv-config.lua",
+			"lua require('core.functions').reload_config()",
+		},
+		{
+			"BufWritePost",
+			"starplug.lua",
+			"lua require('core.functions').reload_config()",
+		},
 		{
 			"TextChanged,InsertLeave",
 			"<buffer>",
 			"silent! write",
+		},
+	},
+	_autolint = {
+		{
+			"BufWritePost",
+			"<buffer>",
+			":silent lua require('lint').try_lint()",
+		},
+		{
+			"BufEnter",
+			"<buffer>",
+			":silent lua require('lint').try_lint()",
 		},
 	},
 })

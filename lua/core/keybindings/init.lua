@@ -77,14 +77,14 @@ utils.map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts) -- Commits 
 utils.map("n", "<leader>gC", "<cmd>Telescope git_bcommits<CR>", opts) -- Commits List for current file
 utils.map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", opts) -- Branches List
 utils.map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", opts) -- Git status
-utils.map("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<CR>", opts) -- Next Hunk
-utils.map("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<CR>", opts) -- Prev Hunk
-utils.map("n", "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<CR>", opts) -- Blame
-utils.map("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", opts) -- Preview Hunk
-utils.map("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", opts) -- Reset Hunk
-utils.map("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", opts) -- Reset Buffer
-utils.map("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", opts) -- Stage Hunk
-utils.map("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", opts) -- Unstage Hunk
+utils.map("n", "<leader>gj ", "<cmd>lua require 'gitsigns'.next_hunk()<CR>", opts) -- Next Hunk
+utils.map("n", "<leader>gk ", "<cmd>lua require 'gitsigns'.prev_hunk()<CR>", opts) -- Prev Hunk
+utils.map("n", "<leader>gl ", "<cmd>lua require 'gitsigns'.blame_line()<CR>", opts) -- Blame
+utils.map("n", "<leader>gp ", "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", opts) -- Preview Hunk
+utils.map("n", "<leader>gr ", "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", opts) -- Reset Hunk
+utils.map("n", "<leader>gR ", "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", opts) -- Reset Buffer
+utils.map("n", "<leader>gs ", "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", opts) -- Stage Hunk
+utils.map("n", "<leader>gu ", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", opts) -- Unstage Hunk
 
 -- Help Telescope
 utils.map("n", "<leader>hh", "<cmd>Telescope help_tags<CR>", opts) -- help_tags
@@ -107,9 +107,9 @@ utils.map("n", "<leader>cd", "<cmd>Lspsaga preview_definition<CR>", opts) -- Pre
 utils.map("n", "<leader>cF", "<cmd>Format<CR>", opts) -- Format buffer
 
 utils.map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-utils.map("n", "<leader>cl", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts) -- error list
 utils.map("n", "<C-n>", "<cmd>lnext<CR>", opts) -- error navigation list
 utils.map("n", "<C-p>", "<cmd>lprev<CR>", opts) -- error navigation list
+utils.map("n", "<leader>cl", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts) -- error list
 utils.map("n", "<leader>cgD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- jump to definition
 utils.map("n", "<leader>cgr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) -- go to reference
 utils.map("n", "<leader>cgi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- buf implementation
@@ -131,6 +131,7 @@ utils.map("n", "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", opt
 utils.map("n", "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", opts)
 utils.map("n", "<leader>sh", "<cmd>Telescope command_history<CR>", opts)
 utils.map("n", "<leader>sm", "<cmd>Telescope marks<CR>", opts)
+utils.map("n", "<leader>sc", "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>")
 
 -- Files
 utils.map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)

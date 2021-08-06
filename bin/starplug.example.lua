@@ -9,14 +9,17 @@ local star = {
 	},
 	star = {
 		-- 'orgmode',    -- Life Organization Tool
+		-- 'runner',    -- Code runner for your language
 	},
 	colors = {
 		"stardark", -- The shiny theme
 		-- "gruvbox", -- The almighty
 		-- "icy", -- Shiver to death!
+		-- "neon", -- Welcome to the light
 	},
 	editor = {
 		"lsp", -- Language Server Protocols
+		"lint", -- A beauty teacher for your language
 		"completion", -- The ultimate completion
 		"nvim-tree", -- Tree explorer
 		"symbols", -- LSP symbols and tags

@@ -19,11 +19,13 @@ local function default_starrc_values()
 		},
 		star = {
 			-- 'orgmode',    -- Life Organization Tool
+			-- 'runner',    -- Code runner for your language
 		},
 		colors = {
 			"stardark", -- The shiny theme
 			-- "gruvbox", -- The almighty
 			-- "icy", -- Shiver to death!
+			-- "neon", -- Welcome to the light
 		},
 		editor = {
 			-- 'terminal',     -- Terminal for Neovim (NOTE: needed for runner and compiler)
@@ -34,9 +36,9 @@ local function default_starrc_values()
 			"telescope", -- Highly extendable fuzzy finder over lists
 			"formatter", -- File formatting
 			"autopairs", -- Autopairs
-			-- 'editorconfig', -- EditorConfig support for Neovim
 			"commentary", -- Comments plugin
 			"lsp", -- Language Server Protocols
+			"lint", -- A beauty teacher for your language
 		},
 		utilities = {
 			-- 'suda',            -- Write and read files without sudo permissions

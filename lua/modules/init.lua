@@ -43,6 +43,9 @@ return packer.startup(function()
 	local disabled_stardark = functions.is_plugin_disabled("stardark")
 	use({ "ashincoder/stardark", disable = disabled_stardark })
 
+	local disabled_neon = functions.is_plugin_disabled("neon")
+	use({ "ashincoder/neon", disable = disabled_neon })
+
 	local disabled_gruvbox = functions.is_plugin_disabled("gruvbox")
 	use({ "ashincoder/gruvbox.nvim", disable = disabled_gruvbox })
 
@@ -81,6 +84,10 @@ return packer.startup(function()
 		end,
 		wants = { "LuaSnip" },
 		requires = {
+			{
+				"tamago324/compe-zsh",
+				after = "nvim-compe",
+			},
 			{
 				"L3MON4D3/LuaSnip",
 				wants = "friendly-snippets",
@@ -126,9 +133,6 @@ return packer.startup(function()
 
 	use({
 		"glepnir/lspsaga.nvim",
-		-- config = function()
-		-- 	require("modules.configs.lsp_saga").saga()
-		-- end,
 		cmd = "Lspsaga",
 		module = "lspsaga",
 		disable = disabled_lsp,
@@ -141,6 +145,31 @@ return packer.startup(function()
 			require("modules.configs.lsp_sign")
 		end,
 		disable = disabled_lsp,
+	})
+
+	-- Linter
+	local disabled_lint = functions.is_plugin_disabled("lint")
+	use({
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("modules.configs.linter")
+		end,
+		-- module = "lint",
+		disable = disabled_lint,
+	})
+
+	local disabled_runner = functions.is_plugin_disabled("runner")
+	use({
+		"michaelb/sniprun",
+		run = "bash install.sh",
+		disable = disabled_runner,
+		cmd = {
+			"SnipRun",
+			"SnipClose",
+			"SnipTerminate",
+			"SnipReset",
+			"SnipReplMemoryClean",
+		},
 	})
 
 	-- Viewer & finder for LSP symbols and tags
@@ -184,7 +213,7 @@ return packer.startup(function()
 	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
 	use({
 		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
+		module = "gitsigns",
 		config = function()
 			require("modules.configs.gitsigns")
 		end,
@@ -222,19 +251,6 @@ return packer.startup(function()
 		config = function()
 			require("modules.configs.telescope")
 		end,
-		disable = disabled_telescope,
-	})
-
-	use({
-		"nvim-telescope/telescope-fzf-native.nvim",
-		run = "make",
-		cmd = "Telescope",
-		disable = disabled_telescope,
-	})
-
-	use({
-		"nvim-telescope/telescope-media-files.nvim",
-		cmd = "Telescope",
 		disable = disabled_telescope,
 	})
 
@@ -356,6 +372,7 @@ return packer.startup(function()
 		config = function()
 			require("modules.configs.dashboard")
 		end,
+		event = "BufWinEnter",
 		disable = disabled_dashboard,
 	})
 
@@ -367,8 +384,6 @@ return packer.startup(function()
 			vim.g.better_escape_shortcut = { "jk" }
 		end,
 	})
-
-	use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
 	-- Smooth Scroll
 	local disabled_neoscroll = functions.is_plugin_disabled("neoscroll")

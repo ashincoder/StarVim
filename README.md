@@ -59,10 +59,7 @@ Here you go :
 
 ## Lazy loading
 StarVim is lazy loaded so hard that your machine does'nt feel the force of the arrival of StarVim. 
-- Almost 30+ plugins are installed. All of them are lazyloaded.
-
-This was tested in core i3 intel machine with a HDD. Will be fast as a *Star* in your machine 
-![Lazy](https://github.com/ashincoder/StarVim/blob/screenshots/lazy.png)
+- Almost 25+ plugins are installed. All of them are lazyloaded.
 
 ## Colors
 StarVim will have more colorschemes with colorfulness. 
@@ -133,12 +130,9 @@ The following repositories helped me in improving StarVim
 
 ## TODO
 
-This project is still a work in progress. But there won't be any breakage.
-
 - [ ] Logo
 - [X] Readme
-- [X] Clean code
+- [X] Clean code [![CodeFactor](https://www.codefactor.io/repository/github/ashincoder/starvim/badge)](https://www.codefactor.io/repository/github/ashincoder/starvim)
 - [X] More Custom Colorschemes 
 - [X] Easily Installable plugins 
 - [ ] Documentation, Wiki and stuff
-
