@@ -77,6 +77,14 @@ utils.map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts) -- Commits 
 utils.map("n", "<leader>gC", "<cmd>Telescope git_bcommits<CR>", opts) -- Commits List for current file
 utils.map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", opts) -- Branches List
 utils.map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", opts) -- Git status
+utils.map("n", "<leader>gj ", "<cmd>lua require 'gitsigns'.next_hunk()<CR>", opts) -- Next Hunk
+utils.map("n", "<leader>gk ", "<cmd>lua require 'gitsigns'.prev_hunk()<CR>", opts) -- Prev Hunk
+utils.map("n", "<leader>gl ", "<cmd>lua require 'gitsigns'.blame_line()<CR>", opts) -- Blame
+utils.map("n", "<leader>gp ", "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", opts) -- Preview Hunk
+utils.map("n", "<leader>gr ", "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", opts) -- Reset Hunk
+utils.map("n", "<leader>gR ", "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", opts) -- Reset Buffer
+utils.map("n", "<leader>gs ", "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", opts) -- Stage Hunk
+utils.map("n", "<leader>gu ", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>", opts) -- Unstage Hunk
 
 -- Help Telescope
 utils.map("n", "<leader>hh", "<cmd>Telescope help_tags<CR>", opts) -- help_tags
