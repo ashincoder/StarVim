@@ -303,16 +303,18 @@ return packer.startup(function()
 	local disabled_orgmode = functions.is_plugin_disabled("orgmode")
 	use({
 		"kristijanhusak/orgmode.nvim",
+		ft = { "org" },
 		config = function()
-			require("orgmode").setup()
+			require("modules.configs.orgmode").config()
 		end,
 		disable = disabled_orgmode,
 	})
 
 	use({
 		"akinsho/org-bullets.nvim",
+		after = "orgmode.nvim",
 		config = function()
-			require("org-bullets").setup()
+			require("modules.configs.orgmode").bullets()
 		end,
 		disable = disabled_orgmode,
 	})
