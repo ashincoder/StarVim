@@ -22,9 +22,9 @@ return packer.startup(function()
 	use({
 		"akinsho/nvim-bufferline.lua",
 		config = function()
-			require("modules.configs.bufferline")
+			require("modules.configs.bufferline").config()
 		end,
-		event = "BufWinEnter",
+	event = "BufWinEnter",
 		disable = disabled_tabline,
 	})
 
@@ -211,21 +211,11 @@ return packer.startup(function()
 	------------------------ File manager, Picker, Fuzzy finder ---------------------------
 
 	-- Icons
-	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
-	use({
-		"lewis6991/gitsigns.nvim",
-		module = "gitsigns",
-		config = function()
-			require("modules.configs.gitsigns")
-		end,
-		disable = disabled_gitsigns,
-	})
-
 	use({
 		"kyazdani42/nvim-web-devicons",
 		after = "lush.nvim",
 		config = function()
-			require("modules.configs.icons")
+			require("modules.configs.icons").config()
 		end,
 	})
 
@@ -261,6 +251,16 @@ return packer.startup(function()
 		"kdheepak/lazygit.nvim",
 		disable = disabled_lazygit,
 		cmd = { "LazyGit", "LazyGitConfig" },
+	})
+
+	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
+	use({
+		"lewis6991/gitsigns.nvim",
+		module = "gitsigns",
+		config = function()
+			require("modules.configs.gitsigns")
+		end,
+		disable = disabled_gitsigns,
 	})
 
 	------------------------ Misc Plugins -------------------------
