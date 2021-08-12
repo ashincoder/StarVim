@@ -33,7 +33,7 @@ return packer.startup(function()
 	use({
 		"ashincoder/lualine.nvim",
 		config = function()
-			require("modules.configs.lualine")
+			require("modules.configs.lualine").config()
 		end,
 		event = "BufWinEnter",
 		disable = disabled_statusline,
