@@ -24,7 +24,7 @@ return packer.startup(function()
 		config = function()
 			require("modules.configs.bufferline").config()
 		end,
-	event = "BufWinEnter",
+		event = "BufWinEnter",
 		disable = disabled_tabline,
 	})
 
@@ -251,15 +251,17 @@ return packer.startup(function()
 		"kdheepak/lazygit.nvim",
 		disable = disabled_lazygit,
 		cmd = { "LazyGit", "LazyGitConfig" },
+		keys = "<leader>gg",
 	})
 
 	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
 	use({
 		"lewis6991/gitsigns.nvim",
-		module = "gitsigns",
 		config = function()
 			require("modules.configs.gitsigns")
 		end,
+		module = "gitsigns",
+		keys = "<space>g",
 		disable = disabled_gitsigns,
 	})
 
