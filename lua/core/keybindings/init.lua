@@ -45,8 +45,8 @@ utils.map("x", "J", ":move '>+1<CR>gv-gv", opts)
 utils.map("v", "p", '"_dP', opts)
 
 -- Commentary
--- utils.map("n", "<leader>/", ":CommentToggle<CR>", opts)
--- utils.map("v", "<leader>/", ":CommentToggle<CR>", opts)
+utils.map("n", "<leader>/", ":CommentToggle<CR>", opts)
+utils.map("v", "<leader>/", ":CommentToggle<CR>", opts)
 
 -- better window movement
 utils.map("n", "<C-h>", "<C-w>h", opts)
