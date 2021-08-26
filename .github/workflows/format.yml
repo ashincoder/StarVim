@@ -3,7 +3,7 @@ name: format
 on:
   push:
     paths: '**.lua'
-    branches: **
+    branches: [main, dev]
 
 jobs:
   stylua:
