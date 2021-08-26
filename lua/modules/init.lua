@@ -22,7 +22,7 @@ return packer.startup(function()
 	use({
 		"akinsho/nvim-bufferline.lua",
 		config = function()
-			require("modules.configs.bufferline")
+			require("modules.configs.bufferline").config()
 		end,
 		event = "BufWinEnter",
 		disable = disabled_tabline,
@@ -33,7 +33,7 @@ return packer.startup(function()
 	use({
 		"ashincoder/lualine.nvim",
 		config = function()
-			require("modules.configs.lualine")
+			require("modules.configs.lualine").config()
 		end,
 		event = "BufWinEnter",
 		disable = disabled_statusline,
@@ -124,6 +124,7 @@ return packer.startup(function()
 
 	use({
 		"neovim/nvim-lspconfig",
+		module = "lspconfig",
 		event = "BufRead",
 		config = function()
 			require("modules.configs.lsp_config")
@@ -210,21 +211,11 @@ return packer.startup(function()
 	------------------------ File manager, Picker, Fuzzy finder ---------------------------
 
 	-- Icons
-	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
-	use({
-		"lewis6991/gitsigns.nvim",
-		module = "gitsigns",
-		config = function()
-			require("modules.configs.gitsigns")
-		end,
-		disable = disabled_gitsigns,
-	})
-
 	use({
 		"kyazdani42/nvim-web-devicons",
 		after = "lush.nvim",
 		config = function()
-			require("modules.configs.icons")
+			require("modules.configs.icons").config()
 		end,
 	})
 
@@ -260,6 +251,18 @@ return packer.startup(function()
 		"kdheepak/lazygit.nvim",
 		disable = disabled_lazygit,
 		cmd = { "LazyGit", "LazyGitConfig" },
+		keys = "<leader>gg",
+	})
+
+	local disabled_gitsigns = functions.is_plugin_disabled("gitsigns")
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("modules.configs.gitsigns")
+		end,
+		module = "gitsigns",
+		keys = "<space>g",
+		disable = disabled_gitsigns,
 	})
 
 	------------------------ Misc Plugins -------------------------
@@ -302,16 +305,18 @@ return packer.startup(function()
 	local disabled_orgmode = functions.is_plugin_disabled("orgmode")
 	use({
 		"kristijanhusak/orgmode.nvim",
+		ft = { "org" },
 		config = function()
-			require("orgmode").setup()
+			require("modules.configs.orgmode").config()
 		end,
 		disable = disabled_orgmode,
 	})
 
 	use({
 		"akinsho/org-bullets.nvim",
+		after = "orgmode.nvim",
 		config = function()
-			require("org-bullets").setup()
+			require("modules.configs.orgmode").bullets()
 		end,
 		disable = disabled_orgmode,
 	})

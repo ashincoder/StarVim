@@ -67,6 +67,7 @@ StarVim will have more colorschemes with colorfulness.
 
 ## Extensibility
 StarVim can be configured within 1 file. Which makes everything simple for the user. 
+
 - While doing a git pull it does'nt affect the user config file. 'sv-config.lua'
 
 + If you still aren't convinced read the [Features](https://github.com/ashincoder/StarVim#features)
