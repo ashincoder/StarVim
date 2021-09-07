@@ -29,11 +29,12 @@
 ![StarVim](https://github.com/ashincoder/StarVim/blob/dev/bin/starvim.png)
 	      
   </div>
-# Logo
 	
-Thank you all for trying to work on the creation of the logo.
-The logo was made by [im-yuria](https://github.com/im-yuria)
-Thank you [Thomashighbaugh](https://github.com/Thomashighbaugh) for creating a such a beautiful creation [Logo here](https://github.com/ashincoder/StarVim/issues/25)
+## Logo
+	
+- Thank you all for trying to work on the creation of the logo.
+- The logo was made by [im-yuria](https://github.com/im-yuria)
+- Thank you [Thomashighbaugh](https://github.com/Thomashighbaugh) for creating a such a beautiful creation [Logo here](https://github.com/ashincoder/StarVim/issues/25)
 
 # Installation
 	
