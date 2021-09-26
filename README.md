@@ -122,7 +122,7 @@ More will be added in the wiki
 If you have any doubts you can freely ask on these following sites:
 - [Gitter](https://gitter.im/starvim-conf/community)
 - [Reddit](https://www.reddit.com/r/StarVim/)	
-- [Discord](https://discord.com/channels/866158163900366879/866158164335394830)
+- [Discord](https://discord.gg/7jVFbwnY)
 - [Youtube](https://www.youtube.com/channel/UCZqKL3vIdyHUiLuR1vYwVgw)
 
 ## Contributions
